@@ -1,0 +1,9 @@
+config
+- every anschlussplatz only once
+- reset button
+
+header
+- only drinks that are available
+
+general
+- page transition
