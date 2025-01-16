@@ -1,51 +1,51 @@
 {
     "1": {
         "name": "Energy",
-        "fuellstand_ml": 1750,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
-        "anschlussplatz": 5
+        "anschlussplatz": 1
     },
     "2": {
         "name": "Zitronenlimonade",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
-        "anschlussplatz": 5
+        "anschlussplatz": 0
     },
     "3": {
         "name": "Orangenlimonade",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
-        "anschlussplatz": 3
+        "anschlussplatz": 0
     },
     "4": {
         "name": "Cola",
-        "fuellstand_ml": 1250,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
-        "anschlussplatz": 9
+        "anschlussplatz": 0
     },
     "5": {
         "name": "Orangensaft",
-        "fuellstand_ml": 1750,
+        "fuellstand_ml": 2000,
         "belegungswert": 0,
-        "anschlussplatz": 1
+        "anschlussplatz": 0
     },
     "6": {
         "name": "Apfelsaft",
         "fuellstand_ml": 2000,
         "belegungswert": 0,
-        "anschlussplatz": 7
+        "anschlussplatz": 0
     },
     "7": {
         "name": "Cranberrysaft",
         "fuellstand_ml": 2000,
         "belegungswert": 0,
-        "anschlussplatz": 2
+        "anschlussplatz": 0
     },
     "8": {
         "name": "Ananassaft",
         "fuellstand_ml": 2000,
         "belegungswert": 0,
-        "anschlussplatz": 5
+        "anschlussplatz": 0
     },
     "9": {
         "name": "Maracujasaft",
@@ -57,7 +57,7 @@
         "name": "Grapefruitsaft",
         "fuellstand_ml": 2000,
         "belegungswert": 0,
-        "anschlussplatz": 8
+        "anschlussplatz": 0
     },
     "11": {
         "name": "Eistee",
@@ -85,37 +85,37 @@
     },
     "15": {
         "name": "Tonic Water",
-        "fuellstand_ml": 150,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
     "16": {
         "name": "Ginger Beer",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 0,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
     "17": {
         "name": "Sprudelwasser",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 500,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
     "18": {
         "name": "Zuckersirup",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 500,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
     "19": {
         "name": "Grapefruitlimonade",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 500,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
     "20": {
         "name": "Grenadine",
-        "fuellstand_ml": 2000,
+        "fuellstand_ml": 500,
         "belegungswert": 0,
         "anschlussplatz": 0
     },
@@ -129,55 +129,55 @@
         "name": "Pfirsichlik\u00f6r",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 13
+        "anschlussplatz": 0
     },
     "23": {
         "name": "Amaretto",
         "fuellstand_ml": 2000,
         "belegungswert": 1,
-        "anschlussplatz": 12
+        "anschlussplatz": 0
     },
     "24": {
         "name": "Aperol",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 10
+        "anschlussplatz": 0
     },
     "25": {
         "name": "Blue Cura\u00e7ao",
         "fuellstand_ml": 2000,
         "belegungswert": 1,
-        "anschlussplatz": 15
+        "anschlussplatz": 0
     },
     "26": {
         "name": "Goldbrand",
         "fuellstand_ml": 2000,
         "belegungswert": 1,
-        "anschlussplatz": 16
+        "anschlussplatz": 0
     },
     "27": {
         "name": "Gin",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 17
+        "anschlussplatz": 0
     },
     "28": {
         "name": "Wodka",
         "fuellstand_ml": 150,
         "belegungswert": 1,
-        "anschlussplatz": 11
+        "anschlussplatz": 0
     },
     "29": {
         "name": "Korn",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 14
+        "anschlussplatz": 0
     },
     "30": {
         "name": "Wei\u00dfer Rum",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 18
+        "anschlussplatz": 0
     },
     "31": {
         "name": "Dunkler Rum",
@@ -189,7 +189,7 @@
         "name": "Whiskey",
         "fuellstand_ml": 250,
         "belegungswert": 1,
-        "anschlussplatz": 19
+        "anschlussplatz": 0
     },
     "33": {
         "name": "Cointreau",

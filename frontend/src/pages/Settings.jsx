@@ -25,19 +25,19 @@ function Settings() {
                     />
                 </NavLink>
             </div>
-            <div className='mt-12 flex flex-col items-center'>
+            <div className='mt-16 flex flex-col items-center'>
                 <NavLink to="/configuration">
                     <div className='bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
                         Konfiguration
                     </div>
                 </NavLink>
-                <div className='mt-4 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
+                <div className='mt-3 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
                     Reinigung
                 </div>
-                <div className='mt-4 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
+                <div className='mt-3 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
                     Kalibrierung
                 </div>
-                <div className='mt-4 bg-[#f63737] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'
+                <div className='mt-3 bg-[#f63737] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'
                     onClick={() => handleShutdown()}>
                     Ausschalten
                 </div>

@@ -135,7 +135,7 @@ function Configuration() {
                         </div>
                         <div
                             className={`flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg ${size === 500 ? 'bg-[#1fe0a6] text-[#12211d]' : 'bg-[#25463c]'
-                                } pl-4 pr-4 active:scale-95 transition-all duration-100`}
+                                } pl-4 pr-4 active:scale-95 transition-all duration-100 mr-1`}
                             onClick={() => changeValue(500, 0, 2)}
                         >
                             <p
@@ -150,12 +150,17 @@ function Configuration() {
                 <div className='px-1 text-[20px] font-bold mb-2'>Getränke</div>
                 <div className='px-1'>
                     {liquids.map((item, index) => {
+                        const assignedAnschlussplaetze = liquids.map((liquid) => liquid.anschlussplatz);
                         const options =
-                            item.belegungswert === 0
-                                ? Array.from({ length: 9 }, (_, i) => i + 1)
-                                : Array.from({ length: 10 }, (_, i) => i + 10)
-
-                        const options_2_base = [500, 750, 1000, 1250, 1500, 2000]
+                        item.belegungswert === 0
+                            ? [0, ...Array.from({ length: 9 }, (_, i) => i + 1)].filter(
+                                  (option) => !assignedAnschlussplaetze.includes(option) || item.anschlussplatz === option || option === 0
+                              )
+                            : [0, ...Array.from({ length: 10 }, (_, i) => i + 10)].filter(
+                                  (option) => !assignedAnschlussplaetze.includes(option) || item.anschlussplatz === option || option === 0
+                              );
+                    
+                        const options_2_base = [0, 250, 500, 750, 1000, 1250, 1500, 2000]
                         const options_2 = options_2_base.includes(item.fuellstand_ml)
                             ? options_2_base
                             : [...options_2_base, item.fuellstand_ml].sort((a, b) => a - b);
@@ -185,7 +190,7 @@ function Configuration() {
                                             step={sliderStep}
                                             value={item.fuellstand_ml}
                                             onChange={(ev) => changeValue(Number(ev.target.value), index, 1)}
-                                            className="w-[300px] accent-[#1fe0a6]"
+                                            className="w-[415px] accent-[#1fe0a6]"
                                         />
                                     </div>
                                     <select
@@ -195,7 +200,7 @@ function Configuration() {
                                     >
                                         {options.map((option) => (
                                             <option key={option} value={option} className='font-semibold'>
-                                                {option}
+                                                {option === 0 ? "-" : option}
                                             </option>
                                         ))}
                                     </select>
