@@ -1,9 +1,6 @@
-config
-- every anschlussplatz only once
-- reset button
-
-header
-- only drinks that are available
+hero
+- random strength Text only on mixdrinks
 
 general
-- page transition
+- code improvements
+- design improvements
