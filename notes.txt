@@ -1,4 +1,7 @@
 general
 - pictures
+- turn off button
+- calibrate
+- clean
 
 hardware
