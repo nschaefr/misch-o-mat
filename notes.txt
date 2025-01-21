@@ -1,5 +1,4 @@
 general
-- code improvements
-- design improvements
 - pictures
--hardware
+
+hardware
