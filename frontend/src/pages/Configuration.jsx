@@ -17,7 +17,7 @@ function Configuration() {
         const response_2 = await axios.get(
           `http://127.0.0.1:5000/drinks/longdrinks`
         );
-        setSize(Object.values(response_2.data)[0].gesamtmenge_ml);
+        setSize(Object.values(response_2.data)[1]);
       } catch (err) {
         console.log(err);
       }

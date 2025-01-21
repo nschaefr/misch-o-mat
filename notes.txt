@@ -1,6 +1,5 @@
-hero
-- random strength Text only on mixdrinks
-
 general
 - code improvements
 - design improvements
+- pictures
+-hardware

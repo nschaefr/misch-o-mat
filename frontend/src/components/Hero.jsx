@@ -28,7 +28,7 @@ function Hero() {
         const response = await axios.get(
           `http://127.0.0.1:5000/drinks/${json_file}`
         );
-        setDrinks(Object.values(response.data));
+        setDrinks(Object.values(response.data[0]));
       } catch (err) {
         console.log(err);
       }
@@ -181,7 +181,9 @@ function Hero() {
             >
               <ReportIcon sx={{ color: "#fcdb03" }} />
               <p className="font-light text-[11px] ml-1 mt-1">
-                Zufallsgetränk und Stärke
+                {category !== "Mischgetränke"
+                  ? "Zufallsgetränk"
+                  : "Zufallsgetränk und Stärke"}
               </p>
             </div>
             <div className="flex mb-[-8px]">

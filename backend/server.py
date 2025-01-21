@@ -40,8 +40,10 @@ def get_data(filename):
             liquids_data = json.load(liquids_file)
 
         available_drinks = {}
+        overall_drink_ml = 0
         for drink_id, drink in drinks_data.items():
             drink_ml = drink['gesamtmenge_ml']
+            overall_drink_ml = drink_ml
             available = True
             for ingredient_id, percentage in drink['zutaten'].items():
                 amount = percentage / 100 * drink_ml
@@ -54,7 +56,7 @@ def get_data(filename):
             if available:
                 available_drinks[drink_id] = drink
 
-        return jsonify(available_drinks)
+        return jsonify(available_drinks, overall_drink_ml)
     except JSONDecodeError:
         return {"error": "Invalid JSON format"}, 400
 
