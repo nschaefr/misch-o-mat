@@ -1,7 +1,7 @@
 general
 - pictures
 - turn off button
-- calibrate
+- calibration
 - cleaning
 
 hardware
