@@ -30,7 +30,6 @@ export default function Preparation() {
   }, []);
 
   const handlePrepare = async () => {
-    console.log(location);
     const randomDrink = random
       ? drinks[Math.floor(Math.random() * drinks.length)]
       : drinks.find((d) => d.name === drink);
