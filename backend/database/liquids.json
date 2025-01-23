@@ -8,7 +8,7 @@
     },
     "2": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 3,
         "belegungswert": 0,
         "fuellstand_ml": 1500,
         "name": "Zitronenlimonade"

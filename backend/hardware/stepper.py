@@ -1,6 +1,5 @@
 import time
 import RPi.GPIO as GPIO
-from .bridge import wegfahren, heranfahren
 
 DIR_PIN = 7
 STEP_PIN = 8

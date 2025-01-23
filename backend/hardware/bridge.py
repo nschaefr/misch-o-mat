@@ -6,18 +6,14 @@ LIN2 = 21
 
 pause_duration = 0.3
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LIN1, GPIO.OUT)
-GPIO.setup(LIN2, GPIO.OUT)
-
-def heranfahren():
+def drive_up():
     GPIO.output(LIN1, GPIO.LOW)
     GPIO.output(LIN2, GPIO.HIGH)
     time.sleep(pause_duration)
     GPIO.output(LIN1, GPIO.LOW)
     GPIO.output(LIN2, GPIO.LOW)
 
-def wegfahren():
+def drive_away():
     GPIO.output(LIN1, GPIO.HIGH)
     GPIO.output(LIN2, GPIO.LOW)
     time.sleep(pause_duration)

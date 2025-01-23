@@ -10,9 +10,13 @@ ENDSTOP_PIN = 12
 LIN1 = 20
 LIN2 = 21
 
+# Pump
+PUMP_PIN = 16
+
 def setup_gpio():
-    # Stepper
     GPIO.setmode(GPIO.BCM)
+
+    # Stepper
     GPIO.setup(DIR_PIN, GPIO.OUT)
     GPIO.setup(STEP_PIN, GPIO.OUT)
     GPIO.setup(ENABLE_PIN, GPIO.OUT)
@@ -20,9 +24,11 @@ def setup_gpio():
     GPIO.output(ENABLE_PIN, GPIO.LOW)
 
     # Bridge
-    GPIO.setmode(GPIO.BCM)
     GPIO.setup(LIN1, GPIO.OUT)
     GPIO.setup(LIN2, GPIO.OUT)
+
+    # Pump
+    GPIO.setup(PUMP_PIN, GPIO.OUT)
 
 def clean_gpio():
     GPIO.cleanup()
