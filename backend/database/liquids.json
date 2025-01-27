@@ -1,7 +1,7 @@
 {
     "1": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 8,
         "belegungswert": 0,
         "fuellstand_ml": 1500,
         "name": "Energy"
@@ -15,7 +15,7 @@
     },
     "3": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 4,
         "belegungswert": 0,
         "fuellstand_ml": 1500,
         "name": "Orangenlimonade"
