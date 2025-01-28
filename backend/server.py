@@ -213,4 +213,4 @@ def update_value(file_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
-    setup_gpio
+    setup_gpio()
