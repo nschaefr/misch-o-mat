@@ -4,4 +4,9 @@ general
 - calibration
 - cleaning
 
+server.py
+- jsoncodeerror
+
+
 hardware
+- trailing
