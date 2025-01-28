@@ -24,7 +24,7 @@ def get_liquids():
         return {"error": "Invalid JSON format"}, 400
 
 
-@app.route('/reset', methods['POST'])
+@app.route('/reset', methods=['POST'])
 def reset_hardware():
     reset()
 
