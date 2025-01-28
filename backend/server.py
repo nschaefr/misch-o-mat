@@ -3,7 +3,7 @@ from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from json import JSONDecodeError
 from dispense import dispense_drink
-from hardware.setup import setup_gpio, clean_gpio
+from reset import reset
 
 app = Flask(__name__)
 CORS(app, origins="*")
@@ -22,6 +22,12 @@ def get_liquids():
         return jsonify(liquids_data)
     except JSONDecodeError:
         return {"error": "Invalid JSON format"}, 400
+
+
+@app.route('/reset', methods['POST'])
+def reset_hardware():
+    reset()
+
 
 
 @app.route('/drinks/<filename>', methods=['GET'])

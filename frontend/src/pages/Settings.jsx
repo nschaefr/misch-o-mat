@@ -15,6 +15,14 @@ function Settings() {
         }
     };
 
+    const handleCleaning = async () => {
+        try {
+            await axios.post('http://127.0.0.1:5000/reset');
+        } catch (error) {
+            console.error("Fehler beim Reinigen:", error);
+        }
+    }
+
     return (
         <div className="pt-4 font-sans">
             <div>
@@ -31,7 +39,7 @@ function Settings() {
                         Konfiguration
                     </div>
                 </NavLink>
-                <div className='mt-3 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
+                <div onClick={() => handleCleaning()} className='mt-3 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
                     Reinigung
                 </div>
                 <div className='mt-3 bg-[#25463c] py-[12px] px-8 rounded-lg text-[19px] font-normal w-[400px] text-center transition-all duration-75 active:scale-95'>
