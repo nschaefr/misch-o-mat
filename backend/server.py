@@ -13,6 +13,7 @@ JSON_FOLDER = "database"
 
 atexit.register(clean_gpio)
 
+
 @app.route('/liquids', methods=['GET'])
 def get_liquids():
     liquids_filepath = os.path.join(JSON_FOLDER, 'liquids.json')
@@ -31,7 +32,6 @@ def get_liquids():
 @app.route('/reset', methods=['POST'])
 def reset_hardware():
     reset()
-
 
 
 @app.route('/drinks/<filename>', methods=['GET'])
@@ -212,5 +212,5 @@ def update_value(file_name):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
     setup_gpio()
+    app.run(debug=True)
