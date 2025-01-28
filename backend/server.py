@@ -1,13 +1,17 @@
 import os
+import atexit
 from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from json import JSONDecodeError
 from dispense import dispense_drink
 from reset import reset
+from hardware.setup import clean_gpio, setup_gpio
 
 app = Flask(__name__)
 CORS(app, origins="*")
 JSON_FOLDER = "database"
+
+atexit.register(clean_gpio)
 
 @app.route('/liquids', methods=['GET'])
 def get_liquids():
@@ -209,3 +213,4 @@ def update_value(file_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    setup_gpio

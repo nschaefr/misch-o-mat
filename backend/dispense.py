@@ -11,7 +11,6 @@ def load_liquids_database(file_path="/home/misch-o-mat/misch-o-mat/backend/datab
         return json.load(file)
 
 def dispense_drink(ingredients):
-    setup_gpio()
     start_position = 0
     liquids_data = load_liquids_database()
 
@@ -35,5 +34,4 @@ def dispense_drink(ingredients):
         start_position = target_position
 
     home_stepper()
-    clean_gpio()
 
