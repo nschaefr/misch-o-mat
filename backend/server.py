@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app, origins="*")
 JSON_FOLDER = "database"
 
-atexit.register(clean_gpio())
+atexit.register(clean_gpio)
 
 @app.route('/liquids', methods=['GET'])
 def get_liquids():
