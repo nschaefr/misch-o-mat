@@ -15,7 +15,7 @@
     },
     "3": {
         "alkohol": false,
-        "anschlussplatz": 4,
+        "anschlussplatz": 1,
         "belegungswert": 0,
         "fuellstand_ml": 1500,
         "name": "Orangenlimonade"
@@ -197,7 +197,7 @@
     },
     "29": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
         "fuellstand_ml": 1500,
         "name": "Korn"
