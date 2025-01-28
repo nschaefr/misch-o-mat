@@ -1,4 +1,5 @@
 general
+- touchscreen scroll for hero and config
 - pictures
 - turn off button
 - calibration
