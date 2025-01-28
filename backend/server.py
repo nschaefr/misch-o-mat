@@ -74,6 +74,7 @@ def get_data(filename):
 @app.route('/preparation', methods=['POST'])
 def preparation():
     data = request.get_json()
+    print(data)
 
     if 'drink' not in data or 'strength' not in data:
         return jsonify({"error": "Missing required parameters"}), 400
