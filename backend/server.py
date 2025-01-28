@@ -132,7 +132,8 @@ def preparation():
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
 
-        dispense_drink(ingredients)
+        print(ingredients)
+        #dispense_drink(ingredients)
 
         return '', 204
     except JSONDecodeError:
