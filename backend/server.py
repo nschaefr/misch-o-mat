@@ -74,7 +74,6 @@ def get_data(filename):
 @app.route('/preparation', methods=['POST'])
 def preparation():
     data = request.get_json()
-    print(data)
 
     if 'drink' not in data or 'strength' not in data:
         return jsonify({"error": "Missing required parameters"}), 400
@@ -133,8 +132,7 @@ def preparation():
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
 
-        print(ingredients)
-        #dispense_drink(ingredients)
+        dispense_drink(ingredients)
 
         return '', 204
     except JSONDecodeError:
