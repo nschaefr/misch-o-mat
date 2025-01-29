@@ -1,13 +1,13 @@
-general
+frontend/backend
 - touchscreen scroll for hero and config
 - pictures
 - turn off button
-- calibration
+- calibration global var 
 - cleaning
-
-server.py
-- jsoncodeerror
-
 
 hardware
 - trailing
+- cleaning
+
+general
+- performance optimization
