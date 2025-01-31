@@ -1,13 +1,11 @@
 frontend/backend
 - touchscreen scroll for hero and config
 - pictures
-- turn off button
-- calibration global var 
-- cleaning
 
 hardware
 - trailing
 - cleaning
+- print statements
 
 general
 - performance optimization
