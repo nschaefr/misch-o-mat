@@ -9,7 +9,7 @@ export default function Preparation() {
   const [icons, setIcons] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  const { drink, drinks, category, random, strength } = location.state;
+  const { drink, drinks, category, random, strength, route } = location.state;
   const hasPrepared = useRef(false);
 
   useEffect(() => {
@@ -30,23 +30,34 @@ export default function Preparation() {
   }, []);
 
   const handlePrepare = async () => {
-    const randomDrink = random
-      ? drinks[Math.floor(Math.random() * drinks.length)]
-      : drinks.find((d) => d.name === drink);
-    const randomStrength = random
-      ? ["schwach", "mittel", "stark"][Math.floor(Math.random() * 3)]
-      : strength;
+    if (route === "preparation") {
+      const randomDrink = random
+        ? drinks[Math.floor(Math.random() * drinks.length)]
+        : drinks.find((d) => d.name === drink);
+      const randomStrength = random
+        ? ["schwach", "mittel", "stark"][Math.floor(Math.random() * 3)]
+        : strength;
 
-    try {
-      await axios.post("http://127.0.0.1:5000/preparation", {
-        drink: randomDrink.name,
-        strength: randomStrength,
-        category: category,
-      });
+      try {
+        await axios.post("http://127.0.0.1:5000/preparation", {
+          drink: randomDrink.name,
+          strength: randomStrength,
+          category: category,
+        });
 
-      navigate("/ready");
-    } catch (err) {
-      console.error("Error during preparation:", err);
+        navigate("/ready");
+      } catch (err) {
+        console.error("Error during preparation:", err);
+        navigate("/");
+      }
+    } else if (route === "clean") {
+      try {
+        await axios.post("http://127.0.0.1:5000/clean");
+        navigate("/settings");
+      } catch (err) {
+        console.error("Error during preparation:", err);
+        navigate("/settings");
+      }
     }
   };
 
