@@ -1,17 +1,61 @@
 import os
-import atexit
 from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from json import JSONDecodeError
-from dispense import dispense_drink
-from reset import reset
-from hardware.setup import clean_gpio, setup_gpio
+from backend.actions.dispense import dispense_drink
+from backend.actions.reset import reset
+from backend.config.setup import clean_gpio, setup_gpio
+from hardware.scale import tare, calibrate
 
 app = Flask(__name__)
 CORS(app, origins="*")
 JSON_FOLDER = "database"
 
-atexit.register(clean_gpio)
+
+@app.route('/tare', methods=['POST'])
+def tare_scale():
+    try:
+        tare()
+        return jsonify({"message": "Scale tared"}), 200
+    except Exception as e:
+        return jsonify({"error": f"Error while taring scale: {str(e)}"}), 500
+
+
+@app.route('/reset', methods=['POST'])
+def reset_hardware():
+    try:
+        reset()
+        return jsonify({"message": "Hardware successfully reset"}), 200
+    except Exception as e:
+        return jsonify({"error":
+                        f"Error while resetting hardware: {str(e)}"}), 500
+
+
+@app.route('/clean', methods=['POST'])
+def clean():
+    try:
+        #clean()
+        return jsonify({"message": "Successfully cleaned"}), 200
+    except Exception as e:
+        return jsonify({"error": f"Error while cleaning: {str(e)}"}), 500
+
+
+@app.route('/calibrate', methods=['POST'])
+def calibrate():
+    try:
+        calibrate(172)
+        return jsonify({"message": "Successfully calibrated"}), 200
+    except Exception as e:
+        return jsonify({"error": f"Error while calibrating: {str(e)}"}), 500
+
+
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    try:
+        #shutdown functionality
+        return jsonify({"message": "Raspberry Pi will be shut down"}), 200
+    except Exception as e:
+        return jsonify({"error": f"Error while shutting down: {str(e)}"}), 500
 
 
 @app.route('/liquids', methods=['GET'])
@@ -27,11 +71,6 @@ def get_liquids():
         return jsonify(liquids_data)
     except JSONDecodeError:
         return {"error": "Invalid JSON format"}, 400
-
-
-@app.route('/reset', methods=['POST'])
-def reset_hardware():
-    reset()
 
 
 @app.route('/drinks/<filename>', methods=['GET'])
