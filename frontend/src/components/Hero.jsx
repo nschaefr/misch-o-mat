@@ -11,6 +11,22 @@ function Hero() {
   const [random, setRandom] = useState(false);
 
   const scrollDivRef = useRef(null);
+  const touchStartY = useRef(0);
+  const touchStartScrollTop = useRef(0);
+
+  const handleTouchStart = (e) => {
+    if (scrollDivRef.current) {
+      touchStartY.current = e.touches[0].clientY;
+      touchStartScrollTop.current = scrollDivRef.current.scrollTop;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (scrollDivRef.current) {
+      const deltaY = e.touches[0].clientY - touchStartY.current;
+      scrollDivRef.current.scrollTop = touchStartScrollTop.current - deltaY;
+    }
+  };
 
   const changeCategory = (category) => {
     setCategory(category);
@@ -66,6 +82,8 @@ function Hero() {
         className="overflow-x-auto whitespace-nowrap p-4 pt-6 scrollbar-hide"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         ref={scrollDivRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
         <div className="inline-flex gap-3">
           {drinks.map((item, index) => (
@@ -114,7 +132,7 @@ function Hero() {
               }`}
               onClick={() =>
                 category !== "Longdrinks" && setStrength("schwach")
-              } // Nur bei nicht-disabled klickbar
+              }
             >
               <p
                 className={`text-sm ${
@@ -194,14 +212,21 @@ function Hero() {
                   checked={random}
                   onChange={() => setRandom(!random)}
                 />
-                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#1fe0a6]"></div>
+                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#1fe0a6]"></div>
               </label>
               <p className="mr-2">Zufällig</p>
             </div>
           </div>
           <Link
             to={"/preparation"}
-            state={{ drink, drinks, category, random, strength }}
+            state={{
+              drink,
+              drinks,
+              category,
+              random,
+              strength,
+              route: "preparation",
+            }}
           >
             <button
               className={`w-[320px] h-[42px] cursor-pointer items-center justify-center rounded-full flex-1 transition-all duration-75 bg-[#1fe0a6] text-[#12211d] text-base font-bold leading-normal tracking-[0.015em] 
