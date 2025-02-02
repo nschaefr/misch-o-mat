@@ -1,5 +1,4 @@
 frontend/backend
-- touchscreen scroll for hero and config
 - pictures
 
 hardware
@@ -8,4 +7,5 @@ hardware
 - print statements
 
 general
-- performance optimization
+- kiosk mode + touch behaviour
+- testing

@@ -6,8 +6,10 @@ import axios from "axios";
 
 function Calibration() {
   const [clicked, setClicked] = useState(false);
+  const arrowStyle = { fontSize: 40 };
 
   const handleAction = async () => {
+    console.log("Calibrating...");
     setClicked(true);
     try {
       const response = await axios.post(`http://127.0.0.1:5000/calibrate`);
@@ -24,7 +26,7 @@ function Calibration() {
         <NavLink to="/settings">
           <ArrowBackIcon
             className="active:scale-95 transition-all duration-100"
-            sx={{ fontSize: 40 }}
+            sx={arrowStyle}
           />
         </NavLink>
       </div>
@@ -41,7 +43,7 @@ function Calibration() {
               ? "bg-[#25463c] opacity-50 pointer-events-none"
               : "bg-[#1fe0a6]"
           } mt-6 w-[180px] h-[42px] cursor-pointer items-center justify-center rounded-full transition-all duration-75 text-[#12211d] font-bold`}
-          onClick={() => handleAction("calibrate")}
+          onClick={handleAction}
         >
           <p className={`text-md font-bold leading-normal`}>Kalibrieren</p>
         </button>
