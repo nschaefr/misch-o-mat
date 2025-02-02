@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
 @keyframes spinner-grow {
   0% {
     transform: rotate(0deg);

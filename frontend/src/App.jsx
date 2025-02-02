@@ -6,6 +6,7 @@ import Ready from "./pages/Ready";
 import Settings from "./pages/Settings";
 import Configuration from "./pages/Configuration";
 import Calibration from "./pages/Calibration";
+import Ingredients from "./pages/Ingredients";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/configuration" element={<Configuration />} />
         <Route path="/calibration" element={<Calibration />} />
+        <Route path="/ingredients" element={<Ingredients />} />
       </Routes>
     </div>
   );

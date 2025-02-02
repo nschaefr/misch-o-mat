@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
-import ReportIcon from "@mui/icons-material/Report";
 import axios from "axios";
 
 function Hero() {
@@ -9,24 +8,17 @@ function Hero() {
   const [drink, setDrink] = useState("");
   const [drinks, setDrinks] = useState([]);
   const [random, setRandom] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const drinksCache = useRef({
+    Mischgetränke: [],
+    Longdrinks: [],
+  });
 
   const scrollDivRef = useRef(null);
-  const touchStartY = useRef(0);
-  const touchStartScrollTop = useRef(0);
 
-  const handleTouchStart = (e) => {
-    if (scrollDivRef.current) {
-      touchStartY.current = e.touches[0].clientY;
-      touchStartScrollTop.current = scrollDivRef.current.scrollTop;
-    }
-  };
-
-  const handleTouchMove = (e) => {
-    if (scrollDivRef.current) {
-      const deltaY = e.touches[0].clientY - touchStartY.current;
-      scrollDivRef.current.scrollTop = touchStartScrollTop.current - deltaY;
-    }
-  };
+  const toggleRandom = useCallback(() => {
+    setRandom((prevRandom) => !prevRandom);
+  }, []);
 
   const changeCategory = (category) => {
     setCategory(category);
@@ -38,20 +30,55 @@ function Hero() {
   };
 
   useEffect(() => {
-    const json_file = category === "Mischgetränke" ? "mixdrinks" : "longdrinks";
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://127.0.0.1:5000/drinks/${json_file}`
-        );
-        setDrinks(Object.values(response.data[0]));
+        setLoading(true);
+        if (drinksCache.current["Mischgetränke"].length === 0) {
+          const response = await axios.get(
+            `http://127.0.0.1:5000/drinks/mixdrinks`
+          );
+          drinksCache.current["Mischgetränke"] = Object.values(
+            response.data[0]
+          );
+        }
+
+        if (drinksCache.current["Longdrinks"].length === 0) {
+          const response_2 = await axios.get(
+            `http://127.0.0.1:5000/drinks/longdrinks`
+          );
+          drinksCache.current["Longdrinks"] = Object.values(response_2.data[0]);
+        }
+        setDrinks(drinksCache.current[category]);
+        setTimeout(() => {
+          changeCategory("Longdrinks");
+          setTimeout(() => {
+            changeCategory("Mischgetränke");
+            setLoading(false);
+          }, 1000);
+        }, 1000);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    setDrinks(drinksCache.current[category]);
   }, [category]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-[365px]">
+        <div className="flex space-x-[5px]">
+          <span className="h-3 w-3 bg-white rounded-full opacity-0 animate-[fadeInOut_1.5s_infinite]"></span>
+          <span className="h-3 w-3 bg-white rounded-full opacity-0 animate-[fadeInOut_1.5s_infinite_0.2s]"></span>
+          <span className="h-3 w-3 bg-white rounded-full opacity-0 animate-[fadeInOut_1.5s_infinite_0.4s]"></span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="font-sans">
@@ -82,8 +109,6 @@ function Hero() {
         className="overflow-x-auto whitespace-nowrap p-4 pt-6 scrollbar-hide"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         ref={scrollDivRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
       >
         <div className="inline-flex gap-3">
           {drinks.map((item, index) => (
@@ -96,7 +121,7 @@ function Hero() {
                 <div
                   className={`w-[143px] h-[143px] bg-center bg-no-repeat aspect-square bg-cover rounded-full ${
                     drink === item.name
-                      ? "border-[2px] border-[#1fe0a6] box-border"
+                      ? "border-[3px] border-[#1fe0a6] box-border"
                       : "border-0"
                   }`}
                   style={{ backgroundImage: `url(${item.url})` }}
@@ -191,26 +216,14 @@ function Hero() {
           </div>
         </div>
         <div className="py-1 mt-auto ml-auto mb-[4px] mr-2">
-          <div className="flex flex-row">
-            <div
-              className={`w-[200px] mt-auto mb-[8px] flex ${
-                random ? "visible" : "invisible"
-              }`}
-            >
-              <ReportIcon sx={{ color: "#fcdb03" }} />
-              <p className="font-light text-[11px] ml-1 mt-1">
-                {category !== "Mischgetränke"
-                  ? "Zufallsgetränk"
-                  : "Zufallsgetränk und Stärke"}
-              </p>
-            </div>
+          <div className="flex flex-row items-end justify-end">
             <div className="flex mb-[-8px]">
               <label className="inline-flex items-center mb-5 cursor-pointer mr-2 ml-auto">
                 <input
                   type="checkbox"
                   className="sr-only peer"
                   checked={random}
-                  onChange={() => setRandom(!random)}
+                  onChange={() => toggleRandom()}
                 />
                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#1fe0a6]"></div>
               </label>
@@ -225,7 +238,7 @@ function Hero() {
               category,
               random,
               strength,
-              route: "preparation",
+              route: "ingredients",
             }}
           >
             <button
