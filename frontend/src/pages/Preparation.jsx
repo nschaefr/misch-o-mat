@@ -30,22 +30,40 @@ export default function Preparation() {
   }, []);
 
   const handlePrepare = async () => {
-    if (route === "preparation") {
-      const randomDrink = random
-        ? drinks[Math.floor(Math.random() * drinks.length)]
-        : drinks.find((d) => d.name === drink);
-      const randomStrength = random
-        ? ["schwach", "mittel", "stark"][Math.floor(Math.random() * 3)]
-        : strength;
+    if (route === "preparation" || route === "ingredients") {
+      if (route === "ingredients") {
+        const randomDrink = random
+          ? drinks[Math.floor(Math.random() * drinks.length)]
+          : drinks.find((d) => d.name === drink);
+        const randomStrength = random
+          ? ["schwach", "mittel", "stark"][Math.floor(Math.random() * 3)]
+          : strength;
+
+        navigate("/ingredients", {
+          state: {
+            drink: randomDrink,
+            drinks: drinks,
+            category: category,
+            random: random,
+            strength: randomStrength,
+          },
+        });
+        return;
+      }
 
       try {
         await axios.post("http://127.0.0.1:5000/preparation", {
-          drink: randomDrink.name,
-          strength: randomStrength,
+          drink: drink.name,
+          strength: strength,
           category: category,
         });
 
-        navigate("/ready");
+        navigate("/ready", {
+          state: {
+            url: drink.url,
+            name: drink.name,
+          },
+        });
       } catch (err) {
         console.error("Error during preparation:", err);
         navigate("/");
@@ -55,7 +73,7 @@ export default function Preparation() {
         await axios.post("http://127.0.0.1:5000/clean");
         navigate("/settings");
       } catch (err) {
-        console.error("Error during preparation:", err);
+        console.error("Error during cleaning:", err);
         navigate("/settings");
       }
     }
