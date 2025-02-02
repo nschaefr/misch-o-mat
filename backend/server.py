@@ -2,10 +2,10 @@ import os
 from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from json import JSONDecodeError
-from backend.actions.dispense import dispense_drink
-from backend.actions.reset import reset
-from backend.config.setup import clean_gpio, setup_gpio
-from hardware.scale import tare, calibrate
+#from backend.actions.dispense import dispense_drink
+#from backend.actions.reset import reset
+#from backend.config.setup import clean_gpio, setup_gpio
+#from hardware.scale import tare, calibrate
 
 app = Flask(__name__)
 CORS(app, origins="*")
@@ -15,7 +15,7 @@ JSON_FOLDER = "database"
 @app.route('/tare', methods=['POST'])
 def tare_scale():
     try:
-        tare()
+        #tare()
         return jsonify({"message": "Scale tared"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while taring scale: {str(e)}"}), 500
@@ -24,7 +24,7 @@ def tare_scale():
 @app.route('/reset', methods=['POST'])
 def reset_hardware():
     try:
-        reset()
+        #reset()
         return jsonify({"message": "Hardware successfully reset"}), 200
     except Exception as e:
         return jsonify({"error":
@@ -43,7 +43,7 @@ def clean():
 @app.route('/calibrate', methods=['POST'])
 def calibrate():
     try:
-        calibrate(172)
+        #calibrate(172)
         return jsonify({"message": "Successfully calibrated"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while calibrating: {str(e)}"}), 500
@@ -171,7 +171,7 @@ def preparation():
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
 
-        dispense_drink(ingredients)
+        #dispense_drink(ingredients)
 
         return '', 204
     except JSONDecodeError:
@@ -251,5 +251,5 @@ def update_value(file_name):
 
 
 if __name__ == '__main__':
-    setup_gpio()
+    #setup_gpio()
     app.run(debug=True)
