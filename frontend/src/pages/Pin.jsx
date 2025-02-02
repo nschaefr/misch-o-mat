@@ -7,9 +7,10 @@ function Pin() {
   const [pin, setPin] = useState("");
   const correctPin = "1234";
   const navigate = useNavigate();
+  const arrowStyle = { fontSize: 40 };
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
+  const handleInputChange = (ev) => {
+    const value = ev.target.value;
     if (value.length <= 4) {
       setPin(value);
     }
@@ -40,7 +41,7 @@ function Pin() {
         <NavLink to="/">
           <ArrowBackIcon
             className="active:scale-95 transition-all duration-100"
-            sx={{ fontSize: 40 }}
+            sx={arrowStyle}
           />
         </NavLink>
       </div>
@@ -52,7 +53,7 @@ function Pin() {
                 className="form-input flex w-full flex-1 resize-none overflow-hidden rounded-full text-white-white text-center text-[25px] focus:outline-0 focus:ring-0 border border-[#366356] bg-[#1b322b] focus:border-[#366356] placeholder:text-white-[#95c6b7] p-[10px] text-white-base font-normal leading-normal"
                 type="password"
                 value={pin}
-                onChange={(ev) => handleInputChange}
+                onChange={(ev) => handleInputChange(ev)}
               />
             </label>
           </div>
