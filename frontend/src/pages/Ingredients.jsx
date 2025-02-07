@@ -14,8 +14,8 @@ function Ingredients() {
 
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center p-2 mt-[-10px]">
-      <h2 className="text-2xl font-bold text-white mb-4">
-        {drink.name} besteht aus..
+      <h2 className="text-2xl text-white mb-3">
+        <span className="font-bold">{drink.name}</span>
       </h2>
       <ul className="text-white text-lg mb-4">
         {ingredients.map((ingredient, index) => (
@@ -24,10 +24,9 @@ function Ingredients() {
           </li>
         ))}
       </ul>
-      <h2 className="text-xl font-bold text-white mb-4">Zubereiten?</h2>
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center gap-3 mt-6">
         <button
-          className="w-[100px] h-[42px] cursor-pointer rounded-full transition-all duration-75 bg-[#1fe0a6] text-[#12211d] text-base font-bold leading-normal tracking-[0.015em]"
+          className="w-[140px] h-[42px] cursor-pointer rounded-full transition-all duration-75 bg-[#1fe0a6] text-[#12211d] text-base font-bold leading-normal tracking-[0.015em]"
           onClick={() =>
             navigate("/preparation", {
               state: {
@@ -41,13 +40,13 @@ function Ingredients() {
             })
           }
         >
-          Ja
+          Zubreiten
         </button>
         <button
-          className="w-[100px] h-[42px] cursor-pointer rounded-full transition-all duration-75 bg-[#25463c] text-base font-bold leading-normal tracking-[0.015em]"
+          className="w-[140px] h-[42px] cursor-pointer rounded-full transition-all duration-75 bg-[#25463c] text-base font-bold leading-normal tracking-[0.015em]"
           onClick={() => navigate("/")}
         >
-          Nein
+          Abbrechen
         </button>
       </div>
     </div>

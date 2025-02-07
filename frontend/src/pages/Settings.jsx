@@ -5,27 +5,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Settings() {
-  const navigate = useNavigate();
-
   const handleAction = async (action) => {
     try {
       const response = await axios.post(`http://127.0.0.1:5000/${action}`);
     } catch (err) {
       console.log(err);
     }
-  };
-
-  const handleNavigateToClean = () => {
-    navigate("/preparation", {
-      state: {
-        drink: "someDrink",
-        drinks: ["drink1", "drink2"],
-        category: "someCategory",
-        random: false,
-        strength: "mittel",
-        route: "clean",
-      },
-    });
   };
 
   return (
@@ -44,12 +29,11 @@ function Settings() {
             Konfiguration
           </div>
         </NavLink>
-        <div
-          onClick={() => handleNavigateToClean()}
-          className="cursor-pointer mt-3 bg-[#25463c] py-[12px] px-8 rounded-full text-[19px] font-normal w-[300px] text-center transition-all duration-75 active:scale-95"
-        >
-          Reinigung
-        </div>
+        <NavLink to="/clean">
+          <div className="cursor-pointer mt-3 bg-[#25463c] py-[12px] px-8 rounded-full text-[19px] font-normal w-[300px] text-center transition-all duration-75 active:scale-95">
+            Reinigung
+          </div>
+        </NavLink>
         <div
           onClick={() => handleAction("reset")}
           className="cursor-pointer mt-3 bg-[#25463c] py-[12px] px-8 rounded-full text-[19px] font-normal w-[300px] text-center transition-all duration-75 active:scale-95"

@@ -144,7 +144,7 @@ function Configuration() {
               return (
                 <div
                   key={index}
-                  className="flex flex-row items-center mb-4 justify-between"
+                  className="flex flex-row items-center mb-3 justify-between"
                 >
                   <div className="text-[18px] font-normal">
                     {item.name}

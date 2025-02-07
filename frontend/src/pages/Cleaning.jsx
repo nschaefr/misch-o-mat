@@ -3,7 +3,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 
-function Calibration() {
+function Cleaning() {
   const [clicked, setClicked] = useState(false);
   const [success, setSuccess] = useState(null); // Initialize as null to handle both success and failure states
   const arrowStyle = { fontSize: 40 };
@@ -11,7 +11,7 @@ function Calibration() {
   const handleAction = async () => {
     setClicked(true);
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/calibrate`);
+      const response = await axios.post(`http://127.0.0.1:5000/clean`);
       setClicked(false);
       setSuccess(true); // Set success to true
     } catch (err) {
@@ -34,8 +34,8 @@ function Calibration() {
       <div className="flex flex-col items-center">
         <div className="font-normal mt-28 text-[22px]">
           <div className="text-center">
-            Kalibriergewicht auf die Waage legen bevor <br /> der Vorgang
-            gestartet wird.
+            Bitte sicherstellen, dass alle notwendigen Gefäße <br /> befüllt
+            sind sowie für den Auslauf bereit stehen.
           </div>
         </div>
         <button
@@ -46,11 +46,11 @@ function Calibration() {
           } mt-6 w-[180px] h-[42px] cursor-pointer items-center justify-center rounded-full transition-all duration-75 text-[#12211d] font-bold`}
           onClick={handleAction}
         >
-          <p className={`text-md font-bold leading-normal`}>Kalibrieren</p>
+          <p className={`text-md font-bold leading-normal`}>Starten</p>
         </button>
         {success !== null && (
           <span className="mt-3 font-normal text-xs">
-            {success ? "✅ Erfolgreich kalibriert" : "❌ Fehlgeschlagen"}
+            {success ? "✅ Erfolgreich gereinigt" : "❌ Fehlgeschlagen"}
           </span>
         )}
       </div>
@@ -58,4 +58,4 @@ function Calibration() {
   );
 }
 
-export default Calibration;
+export default Cleaning;

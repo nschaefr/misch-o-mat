@@ -1,5 +1,6 @@
 frontend/backend
 - pictures
+- error handling
 
 hardware
 - trailing

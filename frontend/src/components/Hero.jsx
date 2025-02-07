@@ -242,11 +242,11 @@ function Hero() {
             }}
           >
             <button
-              className={`w-[320px] h-[42px] cursor-pointer items-center justify-center rounded-full flex-1 transition-all duration-75 bg-[#1fe0a6] text-[#12211d] text-base font-bold leading-normal tracking-[0.015em] 
+              className={`w-[300px] h-[42px] cursor-pointer items-center justify-center rounded-full flex-1 transition-all duration-75 bg-[#1fe0a6] text-[#12211d] text-base font-bold leading-normal tracking-[0.015em] 
                                 ${drink === "" && !random ? "opacity-50" : ""}`}
               disabled={drink === "" && !random}
             >
-              <span className="truncate">Zubereiten</span>
+              <span className="truncate">Weiter</span>
             </button>
           </Link>
         </div>
