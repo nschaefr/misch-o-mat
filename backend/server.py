@@ -27,8 +27,7 @@ def reset_hardware():
         #reset()
         return jsonify({"message": "Hardware successfully reset"}), 200
     except Exception as e:
-        return jsonify({"error":
-                        f"Error while resetting hardware: {str(e)}"}), 500
+        return jsonify({"error": f"Error while resetting hardware: {str(e)}"}), 500
 
 
 @app.route('/clean', methods=['POST'])
@@ -96,10 +95,8 @@ def get_data(filename):
             available = True
             for ingredient_id, percentage in drink['zutaten'].items():
                 amount = percentage / 100 * drink_ml
-                if str(ingredient_id) not in liquids_data or liquids_data[
-                        str(ingredient_id
-                            )]['fuellstand_ml'] < amount or liquids_data[str(
-                                ingredient_id)]['anschlussplatz'] == 0:
+                if str(ingredient_id) not in liquids_data or liquids_data[str(ingredient_id)][
+                        'fuellstand_ml'] < amount or liquids_data[str(ingredient_id)]['anschlussplatz'] == 0:
                     available = False
                     break
             if available:
@@ -119,14 +116,12 @@ def preparation():
 
     drink_name = data['drink']
     strength = data['strength']
-    filename = "longdrinks.json" if data[
-        'category'] == "Longdrinks" else "mixdrinks.json"
+    filename = "longdrinks.json" if data['category'] == "Longdrinks" else "mixdrinks.json"
 
     drinks_filepath = os.path.join(JSON_FOLDER, filename)
     liquids_filepath = os.path.join(JSON_FOLDER, 'liquids.json')
 
-    if not os.path.isfile(drinks_filepath) or not os.path.isfile(
-            liquids_filepath):
+    if not os.path.isfile(drinks_filepath) or not os.path.isfile(liquids_filepath):
         return {"error": "File not found"}, 404
 
     try:
@@ -151,17 +146,11 @@ def preparation():
         for ingredient_id, percentage in drink_data['zutaten'].items():
             if filename == "mixdrinks.json":
                 if liquids_data[str(ingredient_id)]['alkohol'] == False:
-                    amount = (
-                        percentage - 5
-                    ) / 100 * drink_ml if strength == "stark" else (
-                        percentage + 5
-                    ) / 100 * drink_ml if strength == "schwach" else percentage / 100 * drink_ml
+                    amount = (percentage - 5) / 100 * drink_ml if strength == "stark" else (
+                        percentage + 5) / 100 * drink_ml if strength == "schwach" else percentage / 100 * drink_ml
                 else:
-                    amount = (
-                        percentage - 5
-                    ) / 100 * drink_ml if strength == "schwach" else (
-                        percentage + 5
-                    ) / 100 * drink_ml if strength == "stark" else percentage / 100 * drink_ml
+                    amount = (percentage - 5) / 100 * drink_ml if strength == "schwach" else (
+                        percentage + 5) / 100 * drink_ml if strength == "stark" else percentage / 100 * drink_ml
             else:
                 amount = percentage / 100 * drink_ml
             if str(ingredient_id) in liquids_data:
@@ -183,10 +172,7 @@ def update_value(file_name):
     try:
         data = request.get_json()
         if 'value' not in data or 'index' not in data or 'category' not in data:
-            return jsonify({
-                "error":
-                "Missing required parameters: 'index', 'category', 'value'"
-            }), 400
+            return jsonify({"error": "Missing required parameters: 'index', 'category', 'value'"}), 400
 
         value = data['value']
         index = data['index']
@@ -203,10 +189,7 @@ def update_value(file_name):
             with open(filepath, 'w') as file:
                 json.dump(json_data, file, indent=4, sort_keys=False)
 
-            return jsonify({
-                "message":
-                f"'{category}' updated successfully at index {index}"
-            }), 200
+            return jsonify({"message": f"'{category}' updated successfully at index {index}"}), 200
 
         elif file_name == "longdrinks":
             longdrinks_path = os.path.join(JSON_FOLDER, 'longdrinks.json')
@@ -223,10 +206,7 @@ def update_value(file_name):
                     with open(filepath, 'w') as file:
                         json.dump(json_data, file, indent=4, sort_keys=False)
 
-                    return {
-                        "message":
-                        f"'{category}' updated successfully to {new_value}"
-                    }, 200
+                    return {"message": f"'{category}' updated successfully to {new_value}"}, 200
 
                 except JSONDecodeError:
                     return {"error": "Invalid JSON format"}, 400
@@ -236,10 +216,8 @@ def update_value(file_name):
             update_gesamtmenge(longdrinks_path, category, value)
             update_gesamtmenge(mixdrinks_path, category, value)
 
-            return jsonify({
-                "message":
-                "gesamtmenge_ml updated successfully in 'longdrinks.json' and 'mixdrinks.json'"
-            }), 200
+            return jsonify({"message": "gesamtmenge_ml updated successfully in 'longdrinks.json' and 'mixdrinks.json'"
+                           }), 200
 
         else:
             return jsonify({"error": f"Invalid file_name '{file_name}'"}), 400
