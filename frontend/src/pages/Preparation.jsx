@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function Preparation() {
   const [icons, setIcons] = useState([]);
+  const [sosClicked, setSosClicked] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { drink, drinks, category, random, strength, route } = location.state;
@@ -59,12 +60,12 @@ export default function Preparation() {
           category: category,
         });
 
-        /*navigate("/ready", {
+        navigate("/ready", {
           state: {
             url: drink.url,
             name: drink.name,
           },
-        });*/
+        });
       } catch (err) {
         console.error("Error during preparation:", err);
         navigate("/");
@@ -73,6 +74,7 @@ export default function Preparation() {
   };
 
   const handleSOS = async () => {
+    setSosClicked(true);
     try {
       await axios.post("http://127.0.0.1:5000/reset", {
         drink: drink.name,
@@ -104,8 +106,10 @@ export default function Preparation() {
         </div>
       </div>
       <div
-        className="bg-[#ba3232] absolute bottom-4 left-4 cursor-pointer p-1 rounded-xl"
-        onClick={handleSOS}
+        className={`absolute bottom-4 left-4 cursor-pointer p-1 rounded-xl ${
+          sosClicked ? "bg-gray-500 pointer-events-none" : "bg-[#ba3232]"
+        }`}
+        onClick={!sosClicked ? handleSOS : null}
       >
         <DoDisturbIcon sx={{ fontSize: 30 }} />
       </div>

@@ -80,7 +80,7 @@
         "alkohol": false,
         "anschlussplatz": 5,
         "belegungswert": 0,
-        "fuellstand_ml": 1395.0,
+        "fuellstand_ml": 1170.0,
         "name": "Mate"
     },
     "13": {
@@ -199,7 +199,7 @@
         "alkohol": true,
         "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 960.0,
+        "fuellstand_ml": 885.0,
         "name": "Korn"
     },
     "30": {
