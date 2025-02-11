@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import WineBarIcon from "@mui/icons-material/WineBar";
 import SportsBarIcon from "@mui/icons-material/SportsBar";
+import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -58,40 +59,55 @@ export default function Preparation() {
           category: category,
         });
 
-        navigate("/ready", {
+        /*navigate("/ready", {
           state: {
             url: drink.url,
             name: drink.name,
           },
-        });
+        });*/
       } catch (err) {
         console.error("Error during preparation:", err);
         navigate("/");
       }
-    } else if (route === "clean") {
-      try {
-        await axios.post("http://127.0.0.1:5000/clean");
-        navigate("/settings");
-      } catch (err) {
-        console.error("Error during cleaning:", err);
-        navigate("/settings");
-      }
+    }
+  };
+
+  const handleSOS = async () => {
+    try {
+      await axios.post("http://127.0.0.1:5000/reset", {
+        drink: drink.name,
+        strength: strength,
+        category: category,
+      });
+
+      navigate("/");
+    } catch (err) {
+      console.error("Error during cancellation:", err);
+      navigate("/");
     }
   };
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-      <div className="flex justify-center gap-3 pt-4">
-        {icons.map((Icon, index) => (
-          <div
-            key={index}
-            className="text-center inline-block animate-[spinner-grow_1.5s_linear_infinite] rounded-full bg-transparent opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
-            style={{ animationDelay: `${index * 0.2}s` }}
-            role="status"
-          >
-            {Icon}
-          </div>
-        ))}
+    <div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <div className="flex justify-center gap-3 pt-4">
+          {icons.map((Icon, index) => (
+            <div
+              key={index}
+              className="text-center inline-block animate-[spinner-grow_1.5s_linear_infinite] rounded-full bg-transparent opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
+              style={{ animationDelay: `${index * 0.2}s` }}
+              role="status"
+            >
+              {Icon}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div
+        className="bg-[#ba3232] absolute bottom-4 left-4 cursor-pointer p-1 rounded-xl"
+        onClick={handleSOS}
+      >
+        <DoDisturbIcon sx={{ fontSize: 30 }} />
       </div>
     </div>
   );

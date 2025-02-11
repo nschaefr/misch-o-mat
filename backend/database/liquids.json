@@ -31,7 +31,7 @@
         "alkohol": false,
         "anschlussplatz": 5,
         "belegungswert": 0,
-        "fuellstand_ml": 350,
+        "fuellstand_ml": 125.0,
         "name": "Orangensaft"
     },
     "6": {
@@ -59,7 +59,7 @@
         "alkohol": false,
         "anschlussplatz": 5,
         "belegungswert": 0,
-        "fuellstand_ml": 1275.0,
+        "fuellstand_ml": 375.0,
         "name": "Maracujasaft"
     },
     "10": {
@@ -171,7 +171,7 @@
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1550,
+        "fuellstand_ml": 1527.5,
         "name": "Blue Cura\u00e7ao"
     },
     "26": {
@@ -185,14 +185,14 @@
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1050,
+        "fuellstand_ml": 1027.5,
         "name": "Gin"
     },
     "28": {
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 992.5,
+        "fuellstand_ml": 895.0,
         "name": "Wodka"
     },
     "29": {
@@ -206,7 +206,7 @@
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1100,
+        "fuellstand_ml": 1077.5,
         "name": "Wei\u00dfer Rum"
     },
     "31": {
@@ -234,7 +234,7 @@
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1900,
+        "fuellstand_ml": 1877.5,
         "name": "Tequila"
     },
     "35": {
@@ -248,7 +248,7 @@
         "alkohol": true,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1350.0,
+        "fuellstand_ml": 1050.0,
         "name": "Kraeuterlik\u00f6r"
     },
     "37": {
@@ -269,7 +269,7 @@
         "alkohol": false,
         "anschlussplatz": 15,
         "belegungswert": 1,
-        "fuellstand_ml": 1335.0,
+        "fuellstand_ml": 1170.0,
         "name": "Limettensaft"
     },
     "40": {

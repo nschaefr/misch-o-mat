@@ -15,7 +15,9 @@ function Ingredients() {
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center p-2 mt-[-10px]">
       <h2 className="text-2xl text-white mb-3">
-        <span className="font-bold">{drink.name}</span>
+        <span className="font-bold">
+          {drink.name} ({strength})
+        </span>
       </h2>
       <ul className="text-white text-lg mb-4">
         {ingredients.map((ingredient, index) => (
