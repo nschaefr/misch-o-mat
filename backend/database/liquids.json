@@ -1,310 +1,310 @@
 {
     "1": {
         "alkohol": false,
-        "anschlussplatz": 8,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 300,
+        "fuellstand_ml": 2000,
         "name": "Energy"
     },
     "2": {
         "alkohol": false,
-        "anschlussplatz": 3,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 0,
+        "fuellstand_ml": 2000,
         "name": "Zitronenlimonade"
     },
     "3": {
         "alkohol": false,
-        "anschlussplatz": 1,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1190.0,
+        "fuellstand_ml": 2000,
         "name": "Orangenlimonade"
     },
     "4": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 150.0,
+        "fuellstand_ml": 2000,
         "name": "Cola"
     },
     "5": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 125.0,
+        "fuellstand_ml": 2000,
         "name": "Orangensaft"
     },
     "6": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Apfelsaft"
     },
     "7": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Cranberrysaft"
     },
     "8": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Ananassaft"
     },
     "9": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 375.0,
+        "fuellstand_ml": 2000,
         "name": "Maracujasaft"
     },
     "10": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Grapefruitsaft"
     },
     "11": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1035.0,
+        "fuellstand_ml": 2000,
         "name": "Eistee"
     },
     "12": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1170.0,
+        "fuellstand_ml": 2000,
         "name": "Mate"
     },
     "13": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1290.0,
+        "fuellstand_ml": 2000,
         "name": "Wildberry"
     },
     "14": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1275.0,
+        "fuellstand_ml": 2000,
         "name": "Ginger Ale"
     },
     "15": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 180.0,
+        "fuellstand_ml": 2000,
         "name": "Tonic Water"
     },
     "16": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Ginger Beer"
     },
     "17": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1275.0,
+        "fuellstand_ml": 2000,
         "name": "Sprudelwasser"
     },
     "18": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Zuckersirup"
     },
     "19": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Grapefruitlimonade"
     },
     "20": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Grenadine"
     },
     "21": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Kokoslik\u00f6r"
     },
     "22": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Pfirsichlik\u00f6r"
     },
     "23": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Amaretto"
     },
     "24": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Aperol"
     },
     "25": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1527.5,
+        "fuellstand_ml": 2000,
         "name": "Blue Cura\u00e7ao"
     },
     "26": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Goldbrand"
     },
     "27": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1027.5,
+        "fuellstand_ml": 2000,
         "name": "Gin"
     },
     "28": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 895.0,
+        "fuellstand_ml": 2000,
         "name": "Wodka"
     },
     "29": {
         "alkohol": true,
         "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 885.0,
+        "fuellstand_ml": 2000,
         "name": "Korn"
     },
     "30": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1077.5,
+        "fuellstand_ml": 2000,
         "name": "Wei\u00dfer Rum"
     },
     "31": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1550,
+        "fuellstand_ml": 2000,
         "name": "Dunkler Rum"
     },
     "32": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1245.0,
+        "fuellstand_ml": 2000,
         "name": "Whiskey"
     },
     "33": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Cointreau"
     },
     "34": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1877.5,
+        "fuellstand_ml": 2000,
         "name": "Tequila"
     },
     "35": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1410.0,
+        "fuellstand_ml": 2000,
         "name": "Lillet"
     },
     "36": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1050.0,
+        "fuellstand_ml": 2000,
         "name": "Kraeuterlik\u00f6r"
     },
     "37": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1119.0,
+        "fuellstand_ml": 2000,
         "name": "Sekt"
     },
     "38": {
         "alkohol": true,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Cacha\u00e7a"
     },
     "39": {
         "alkohol": false,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1170.0,
+        "fuellstand_ml": 2000,
         "name": "Limettensaft"
     },
     "40": {
         "alkohol": false,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Zitronensaft"
     },
     "41": {
         "alkohol": false,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Limetten/Zitronensaft"
     },
     "42": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1275.0,
+        "fuellstand_ml": 2000,
         "name": "Bitter Lemon"
     },
     "43": {
         "alkohol": false,
-        "anschlussplatz": 5,
+        "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Tomatensaft"
     },
     "44": {
         "alkohol": false,
-        "anschlussplatz": 15,
+        "anschlussplatz": 2,
         "belegungswert": 1,
-        "fuellstand_ml": 1500,
+        "fuellstand_ml": 2000,
         "name": "Holunderbluetensirup"
     }
 }
