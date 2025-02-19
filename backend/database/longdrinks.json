@@ -7,7 +7,7 @@
       "33": 15
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/skinny_margarita.jpg"
+    "url": "longdrinks/skinny_margarita.jpg"
   },
   "2": {
     "name": "Long Island Iced Tea",
@@ -20,7 +20,7 @@
       "39": 55
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/long_island_ice_tea.jpg"
+    "url": "longdrinks/long_island_ice_tea.jpg"
   },
   "3": {
     "name": "Gin Buck",
@@ -29,7 +29,7 @@
       "14": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gin_buck.jpg"
+    "url": "longdrinks/gin_buck.jpg"
   },
   "4": {
     "name": "Tequila Sunrise",
@@ -39,7 +39,7 @@
       "10": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/tequila_sunrise.jpg"
+    "url": "longdrinks/tequila_sunrise.jpg"
   },
   "5": {
     "name": "Aperol Spritz",
@@ -48,7 +48,7 @@
       "37": 70
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/aperol_spritz.jpg"
+    "url": "longdrinks/aperol_spritz.jpg"
   },
   "6": {
     "name": "Pina Colada",
@@ -58,7 +58,7 @@
       "21": 7.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/pina_colada.jpg"
+    "url": "longdrinks/pina_colada.jpg"
   },
   "7": {
     "name": "Moscow Mule",
@@ -68,7 +68,7 @@
       "39": 50
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/moscow_mule.jpg"
+    "url": "longdrinks/moscow_mule.jpg"
   },
   "8": {
     "name": "Cuba Libre",
@@ -77,7 +77,7 @@
       "4": 67.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/cuba_libre.jpg"
+    "url": "longdrinks/cuba_libre.jpg"
   },
   "9": {
     "name": "Sex on the Beach",
@@ -88,7 +88,7 @@
       "10": 25
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/sex_on_the_beach.jpg"
+    "url": "longdrinks/sex_on_the_beach.jpg"
   },
   "10": {
     "name": "Mai Tai",
@@ -101,7 +101,7 @@
       "10": 25
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/mai_tai.jpg"
+    "url": "longdrinks/mai_tai.jpg"
   },
   "11": {
     "name": "Rum Fizz",
@@ -112,7 +112,7 @@
       "17": 57.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/rum_fizz.jpg"
+    "url": "longdrinks/rum_fizz.jpg"
   },
   "12": {
     "name": "French 75",
@@ -123,7 +123,7 @@
       "37": 57.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/french_75.jpg"
+    "url": "longdrinks/french_75.jpg"
   },
   "13": {
     "name": "Paloma",
@@ -133,7 +133,7 @@
       "19": 67.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/paloma.jpg"
+    "url": "longdrinks/paloma.jpg"
   },
   "14": {
     "name": "Beschleuniger Nr. 2",
@@ -142,7 +142,7 @@
       "5": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/beschleuniger_2.jpg"
+    "url": "longdrinks/beschleuniger_2.jpg"
   },
   "15": {
     "name": "Beschleuniger Nr. 1",
@@ -151,7 +151,7 @@
       "12": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/beschleuniger_1.jpg"
+    "url": "longdrinks/beschleuniger_1.jpg"
   },
   "16": {
     "name": "Wodka Wellness",
@@ -161,7 +161,7 @@
       "16": 32.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/wodka_wellness.jpg"
+    "url": "longdrinks/wodka_wellness.jpg"
   },
   "17": {
     "name": "Gr\u00fcne Wiese",
@@ -170,7 +170,7 @@
       "37": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gruene_wiese.jpg"
+    "url": "longdrinks/gruene_wiese.jpg"
   },
   "18": {
     "name": "Karma Cham\u00e4leon",
@@ -179,7 +179,7 @@
       "3": 70
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/karma_chamaeleon.jpg"
+    "url": "longdrinks/karma_chamaeleon.jpg"
   },
   "19": {
     "name": "Schwemmhile",
@@ -188,7 +188,7 @@
       "4": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/schwemmhile.jpg"
+    "url": "longdrinks/schwemmhile.jpg"
   },
   "20": {
     "name": "Dark 'n' Stormy",
@@ -197,7 +197,7 @@
       "16": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/dark_n_stormy.jpg"
+    "url": "longdrinks/dark_n_stormy.jpg"
   },
   "21": {
     "name": "Planters Punch",
@@ -208,7 +208,7 @@
       "33": 12.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/planters_punch.jpg"
+    "url": "longdrinks/planters_punch.jpg"
   },
   "22": {
     "name": "Rum Punch",
@@ -220,7 +220,7 @@
       "10": 50
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/rum_punch.jpg"
+    "url": "longdrinks/rum_punch.jpg"
   },
   "23": {
     "name": "Sea Breeze",
@@ -230,7 +230,7 @@
       "10": 25
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/sea_breeze.jpg"
+    "url": "longdrinks/sea_breeze.jpg"
   },
   "24": {
     "name": "Gin Fizz",
@@ -240,7 +240,7 @@
       "17": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gin_fizz.jpg"
+    "url": "longdrinks/gin_fizz.jpg"
   },
   "25": {
     "name": "Lynchburg Lemonade",
@@ -251,7 +251,7 @@
       "40": 65
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/lynchburg_lemonade.jpg"
+    "url": "longdrinks/lynchburg_lemonade.jpg"
   },
   "26": {
     "name": "Hurricane",
@@ -262,7 +262,7 @@
       "9": 50
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/hurricane.jpg"
+    "url": "longdrinks/hurricane.jpg"
   },
   "27": {
     "name": "Blue Lagoon",
@@ -272,7 +272,7 @@
       "40": 67.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/blue_lagoon.jpg"
+    "url": "longdrinks/blue_lagoon.jpg"
   },
   "28": {
     "name": "Kentucky Mule",
@@ -281,7 +281,7 @@
       "16": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/kentucky_mule.jpg"
+    "url": "longdrinks/kentucky_mule.jpg"
   },
   "29": {
     "name": "Tequila Fizz",
@@ -291,7 +291,7 @@
       "17": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/tequila_fizz.jpg"
+    "url": "longdrinks/tequila_fizz.jpg"
   },
   "30": {
     "name": "Tequila Ginger",
@@ -300,7 +300,7 @@
       "16": 77.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/tequila_ginger.jpg"
+    "url": "longdrinks/tequila_ginger.jpg"
   },
   "31": {
     "name": "Gin Mule",
@@ -309,7 +309,7 @@
       "16": 77.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gin_mule.jpg"
+    "url": "longdrinks/gin_mule.jpg"
   },
   "32": {
     "name": "Gin Lemon Fresh",
@@ -320,7 +320,7 @@
       "28": 80
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gin_lemon_fresh.jpg"
+    "url": "longdrinks/gin_lemon_fresh.jpg"
   },
   "33": {
     "name": "Bittersweet Ginger",
@@ -331,7 +331,7 @@
       "40": 35
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/bittersweet_ginger.jpg"
+    "url": "longdrinks/bittersweet_ginger.jpg"
   },
   "34": {
     "name": "Gin Sour",
@@ -341,7 +341,7 @@
       "17": 60
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/gin_sour.jpg"
+    "url": "longdrinks/gin_sour.jpg"
   },
   "35": {
     "name": "Batanga",
@@ -350,7 +350,7 @@
       "4": 80
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/batanga.jpg"
+    "url": "longdrinks/batanga.jpg"
   },
   "36": {
     "name": "Raspberry Mojito",
@@ -360,7 +360,7 @@
       "5": 67.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/raspberry_mojito.jpg"
+    "url": "longdrinks/raspberry_mojito.jpg"
   },
   "37": {
     "name": "Suffering Bastard",
@@ -371,7 +371,7 @@
       "16": 52.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/suffering_bastard.jpg"
+    "url": "longdrinks/suffering_bastard.jpg"
   },
   "38": {
     "name": "Stone Cold Larceny",
@@ -380,7 +380,7 @@
       "16": 75
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/stone_cold_larceny.jpg"
+    "url": "longdrinks/stone_cold_larceny.jpg"
   },
   "39": {
     "name": "Lillet Lemon",
@@ -390,7 +390,7 @@
       "40": 55
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/lillet_lemon.jpg"
+    "url": "longdrinks/lillet_lemon.jpg"
   },
   "40": {
     "name": "Cancun Cooler",
@@ -400,7 +400,7 @@
       "8": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/cancun_cooler.jpg"
+    "url": "longdrinks/cancun_cooler.jpg"
   },
   "41": {
     "name": "Fancy Drink",
@@ -410,7 +410,7 @@
       "10": 62.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/fancy_drink.jpg"
+    "url": "longdrinks/fancy_drink.jpg"
   },
   "42": {
     "name": "Belo Buck",
@@ -422,7 +422,7 @@
       "16": 25
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/belo_buck.jpg"
+    "url": "longdrinks/belo_buck.jpg"
   },
   "43": {
     "name": "Blueberry Smash",
@@ -434,7 +434,7 @@
       "5": 32.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/blueberry_smash.jpg"
+    "url": "longdrinks/blueberry_smash.jpg"
   },
   "44": {
     "name": "Tropic Tonic",
@@ -446,7 +446,7 @@
       "16": 37.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/tropic_tonic.jpg"
+    "url": "longdrinks/tropic_tonic.jpg"
   },
   "45": {
     "name": "Bitter Tonic",
@@ -458,6 +458,6 @@
       "18": 7.5
     },
     "gesamtmenge_ml": 300,
-    "url": "/longdrinks/bitter_tonic.jpg"
+    "url": "longdrinks/bitter_tonic.jpg"
   }
 }

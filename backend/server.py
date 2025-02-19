@@ -1,5 +1,4 @@
 import os
-import time
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
 from json import JSONDecodeError
@@ -8,15 +7,14 @@ from json import JSONDecodeError
 #from backend.config.setup import clean_gpio, setup_gpio
 #from hardware.scale import tare, calibrate
 
-#app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
 CORS(app, origins="*")
 JSON_FOLDER = "database"
-"""
+
+
 @app.route('/')
 def serve_react_app():
     return send_from_directory(app.static_folder, "index.html")
-"""
 
 
 @app.route('/tare', methods=['POST'])
