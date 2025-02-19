@@ -1,14 +1,11 @@
-import time
 import json
 from hardware.stepper import move_to_hole, home_stepper
 from hardware.bridge import drive_up, drive_away
 from hardware.pump import pump_off, pump_on
-from hardware.scale import scale, calibrate, tare
+from hardware.scale import scale, tare
 
 
-def load_liquids_database(
-        file_path="/home/misch-o-mat/misch-o-mat/backend/database/liquids.json"
-):
+def load_liquids_database(file_path="/home/misch-o-mat/misch-o-mat/backend/database/liquids.json"):
     with open(file_path, "r") as file:
         return json.load(file)
 
@@ -38,3 +35,4 @@ def dispense_drink(ingredients):
         pump_off()
 
     home_stepper()
+    print("Dispensing finished")

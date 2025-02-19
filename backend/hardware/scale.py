@@ -32,7 +32,7 @@ def scale(target_weight, trailing):
     weight = 0
     previous_weight = 0
     max_increase = 100
-
+    print("Scaling for " + str(target_weight) + "g")
     start_time = time.time()
 
     while weight < target_weight:
