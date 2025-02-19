@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Calibration() {
   const [clicked, setClicked] = useState(false);
-  const [success, setSuccess] = useState(null); // Initialize as null to handle both success and failure states
+  const [success, setSuccess] = useState(null);
   const arrowStyle = { fontSize: 40 };
 
   const handleAction = async () => {
@@ -14,11 +14,11 @@ function Calibration() {
     try {
       const response = await axios.post(`http://127.0.0.1:5000/calibrate`);
       setClicked(false);
-      setSuccess(true); // Set success to true
+      setSuccess(true);
     } catch (err) {
       console.log(err);
       setClicked(false);
-      setSuccess(false); // Set success to false
+      setSuccess(false);
     }
   };
 
@@ -38,8 +38,8 @@ function Calibration() {
       <div className="flex flex-col items-center">
         <div className="font-normal mt-28 text-[22px]">
           <div className="text-center">
-            Kalibriergewicht auf die Waage legen bevor <br /> der Vorgang
-            gestartet wird.
+            Ein Kalibriergewicht von 100g auf die Waage legen bevor <br /> der
+            Vorgang gestartet wird.
           </div>
         </div>
         <button

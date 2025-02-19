@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-from hx711 import HX711  
 
 # Stepper
 DIR_PIN = 7
@@ -13,6 +12,7 @@ LIN2 = 21
 
 # Pump
 PUMP_PIN = 16
+
 
 def setup_gpio():
     GPIO.setmode(GPIO.BCM)
@@ -30,6 +30,7 @@ def setup_gpio():
 
     # Pump
     GPIO.setup(PUMP_PIN, GPIO.OUT)
+
 
 def clean_gpio():
     GPIO.cleanup()

@@ -76,3 +76,6 @@ yarn-debug.log*
 # Test, Coverage und Build-Reports
 coverage/
 *.lcov
+
+notes.txt
+
