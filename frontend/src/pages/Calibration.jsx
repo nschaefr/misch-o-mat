@@ -10,6 +10,7 @@ function Calibration() {
 
   const handleAction = async () => {
     setClicked(true);
+    setSuccess(null);
     try {
       const response = await axios.post(`http://127.0.0.1:5000/calibrate`);
       setClicked(false);
@@ -24,7 +25,10 @@ function Calibration() {
   return (
     <div className="pt-4 font-sans">
       <div>
-        <NavLink to="/settings">
+        <NavLink
+          to="/settings"
+          className={clicked ? "pointer-events-none opacity-50" : ""}
+        >
           <ArrowBackIcon
             className="active:scale-95 transition-all duration-100"
             sx={arrowStyle}

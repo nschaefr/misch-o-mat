@@ -2,13 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import WineBarIcon from "@mui/icons-material/WineBar";
 import SportsBarIcon from "@mui/icons-material/SportsBar";
-import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 export default function Preparation() {
   const [icons, setIcons] = useState([]);
-  const [sosClicked, setSosClicked] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { drink, drinks, category, random, strength, route } = location.state;
@@ -73,22 +71,6 @@ export default function Preparation() {
     }
   };
 
-  const handleSOS = async () => {
-    setSosClicked(true);
-    try {
-      await axios.post("http://127.0.0.1:5000/reset", {
-        drink: drink.name,
-        strength: strength,
-        category: category,
-      });
-
-      navigate("/");
-    } catch (err) {
-      console.error("Error during cancellation:", err);
-      navigate("/");
-    }
-  };
-
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -104,14 +86,6 @@ export default function Preparation() {
             </div>
           ))}
         </div>
-      </div>
-      <div
-        className={`absolute bottom-4 left-4 cursor-pointer p-1 rounded-xl ${
-          sosClicked ? "bg-gray-500 pointer-events-none" : "bg-[#ba3232]"
-        }`}
-        onClick={!sosClicked ? handleSOS : null}
-      >
-        <DoDisturbIcon sx={{ fontSize: 30 }} />
       </div>
     </div>
   );
