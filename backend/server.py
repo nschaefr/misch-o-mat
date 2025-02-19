@@ -2,10 +2,14 @@ import os
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
 from json import JSONDecodeError
-#from backend.actions.dispense import dispense_drink
-#from backend.actions.reset import reset
-#from backend.config.setup import clean_gpio, setup_gpio
-#from hardware.scale import tare, calibrate
+import logging
+from actions.dispense import dispense_drink
+from actions.reset import reset
+from config.setup import clean_gpio, setup_gpio
+from hardware.scale import tare, calibrate
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
 CORS(app, origins="*")
@@ -20,7 +24,7 @@ def serve_react_app():
 @app.route('/tare', methods=['POST'])
 def tare_scale():
     try:
-        #tare()
+        tare()
         return jsonify({"message": "Scale tared"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while taring scale: {str(e)}"}), 500
@@ -29,7 +33,7 @@ def tare_scale():
 @app.route('/reset', methods=['POST'])
 def reset_hardware():
     try:
-        #reset()
+        reset()
         return jsonify({"message": "Hardware successfully reset"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while resetting hardware: {str(e)}"}), 500
@@ -38,7 +42,7 @@ def reset_hardware():
 @app.route('/clean', methods=['POST'])
 def clean():
     try:
-        #clean()
+        clean()
         return jsonify({"message": "Successfully cleaned"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while cleaning: {str(e)}"}), 500
@@ -47,7 +51,7 @@ def clean():
 @app.route('/calibrate', methods=['POST'])
 def calibrate():
     try:
-        #calibrate(172)
+        calibrate(100)
         return jsonify({"message": "Successfully calibrated"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while calibrating: {str(e)}"}), 500
@@ -57,6 +61,7 @@ def calibrate():
 def shutdown():
     try:
         #shutdown functionality
+        clean_gpio()
         return jsonify({"message": "Raspberry Pi will be shut down"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while shutting down: {str(e)}"}), 500
@@ -165,7 +170,7 @@ def preparation():
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
 
-        #dispense_drink(ingredients)
+        dispense_drink(ingredients)
 
         return '', 204
     except JSONDecodeError:
@@ -234,5 +239,5 @@ def update_value(file_name):
 
 
 if __name__ == '__main__':
-    #setup_gpio()
+    setup_gpio()
     app.run(host="0.0.0.0", port=5000, debug=True)
