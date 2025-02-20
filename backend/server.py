@@ -27,7 +27,6 @@ def button_listener():
             clean_gpio()
             setup_gpio()
             reset()
-        time.sleep(0.05)
 
 
 @app.route('/')
@@ -133,6 +132,7 @@ def get_data(filename):
 
 @app.route('/preparation', methods=['POST'])
 def preparation():
+    setup_gpio()
     data = request.get_json()
 
     if 'drink' not in data or 'strength' not in data:
