@@ -11,21 +11,24 @@ steps_per_hole = 160  # 3200/360 = 8,89 Schritte pro Grad /// 360/20 = 18 Grad p
 
 
 def home_stepper():
-    print("Homing stepper...")
-    GPIO.output(DIR_PIN, GPIO.LOW)
-    while GPIO.input(ENDSTOP_PIN) == GPIO.HIGH:
-        GPIO.output(STEP_PIN, GPIO.HIGH)
-        time.sleep(0.001)
-        GPIO.output(STEP_PIN, GPIO.LOW)
-        time.sleep(0.001)
+    try:
+        print("Homing stepper...")
+        GPIO.output(DIR_PIN, GPIO.LOW)
+        while GPIO.input(ENDSTOP_PIN) == GPIO.HIGH:
+            GPIO.output(STEP_PIN, GPIO.HIGH)
+            time.sleep(0.001)
+            GPIO.output(STEP_PIN, GPIO.LOW)
+            time.sleep(0.001)
 
-    GPIO.output(DIR_PIN, GPIO.HIGH)
+        GPIO.output(DIR_PIN, GPIO.HIGH)
 
-    for i in range(55):
-        GPIO.output(STEP_PIN, GPIO.HIGH)
-        time.sleep(0.001)
-        GPIO.output(STEP_PIN, GPIO.LOW)
-        time.sleep(0.001)
+        for i in range(55):
+            GPIO.output(STEP_PIN, GPIO.HIGH)
+            time.sleep(0.001)
+            GPIO.output(STEP_PIN, GPIO.LOW)
+            time.sleep(0.001)
+    except Exception as e:
+        print(f"Error during homing: {str(e)}")
 
 
 def map_position(input_position):
@@ -40,22 +43,25 @@ def map_position(input_position):
 
 
 def move_to_hole(start, target):
-    start_position = map_position(start)
-    target_position = map_position(target)
-    print(f"Moving...")
+    try:
+        start_position = map_position(start)
+        target_position = map_position(target)
+        print(f"Moving...")
 
-    target_steps = (target_position - start_position) * steps_per_hole
+        target_steps = (target_position - start_position) * steps_per_hole
 
-    if target_steps >= 0:
-        GPIO.output(DIR_PIN, GPIO.HIGH)
-    else:
-        GPIO.output(DIR_PIN, GPIO.LOW)
+        if target_steps >= 0:
+            GPIO.output(DIR_PIN, GPIO.HIGH)
+        else:
+            GPIO.output(DIR_PIN, GPIO.LOW)
 
-    for i in range(abs(target_steps)):
-        if GPIO.input(ENDSTOP_PIN) == GPIO.LOW:
-            home_stepper()
-            return
-        GPIO.output(STEP_PIN, GPIO.HIGH)
-        time.sleep(0.0002)
-        GPIO.output(STEP_PIN, GPIO.LOW)
-        time.sleep(0.0002)
+        for i in range(abs(target_steps)):
+            if GPIO.input(ENDSTOP_PIN) == GPIO.LOW:
+                home_stepper()
+                return
+            GPIO.output(STEP_PIN, GPIO.HIGH)
+            time.sleep(0.0002)
+            GPIO.output(STEP_PIN, GPIO.LOW)
+            time.sleep(0.0002)
+    except Exception as e:
+        print(f"Error during moving: {str(e)}")
