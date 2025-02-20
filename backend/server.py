@@ -1,7 +1,6 @@
 import os
 import logging
 import threading
-import time
 import RPi.GPIO as GPIO
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
@@ -24,8 +23,6 @@ def button_listener():
     while True:
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             print("Emergency Button pressed")
-            clean_gpio()
-            setup_gpio()
             reset()
 
 
@@ -132,7 +129,6 @@ def get_data(filename):
 
 @app.route('/preparation', methods=['POST'])
 def preparation():
-    setup_gpio()
     data = request.get_json()
 
     if 'drink' not in data or 'strength' not in data:
