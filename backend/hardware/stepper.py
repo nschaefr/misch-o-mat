@@ -56,6 +56,6 @@ def move_to_hole(start, target):
             home_stepper()
             return
         GPIO.output(STEP_PIN, GPIO.HIGH)
-        time.sleep(0.001)
+        time.sleep(0.0002)
         GPIO.output(STEP_PIN, GPIO.LOW)
-        time.sleep(0.001)
+        time.sleep(0.0002)
