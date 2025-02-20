@@ -240,4 +240,5 @@ def update_value(file_name):
 
 if __name__ == '__main__':
     setup_gpio()
+    reset()
     app.run(host="0.0.0.0", port=5000, debug=True)
