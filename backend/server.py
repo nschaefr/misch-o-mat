@@ -23,6 +23,9 @@ JSON_FOLDER = "database"
 def button_listener():
     while True:
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
+            print("Emergency Button pressed")
+            clean_gpio()
+            setup_gpio()
             reset()
             time.sleep(0.5)
 
@@ -259,4 +262,4 @@ if __name__ == '__main__':
     try:
         app.run(host="0.0.0.0", port=5000, debug=True)
     except KeyboardInterrupt:
-        GPIO.cleanup()
+        clean_gpio()
