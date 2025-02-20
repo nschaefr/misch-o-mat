@@ -27,11 +27,7 @@ def button_listener():
             clean_gpio()
             setup_gpio()
             reset()
-            time.sleep(0.5)
-
-
-listener_thread = threading.Thread(target=button_listener, daemon=True)
-listener_thread.start()
+            time.sleep(0.05)
 
 
 @app.route('/')
@@ -259,6 +255,8 @@ def update_value(file_name):
 if __name__ == '__main__':
     setup_gpio()
     reset()
+    listener_thread = threading.Thread(target=button_listener, daemon=True)
+    listener_thread.start()
     try:
         app.run(host="0.0.0.0", port=5000, debug=True)
     except KeyboardInterrupt:
