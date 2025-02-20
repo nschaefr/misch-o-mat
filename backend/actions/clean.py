@@ -15,16 +15,15 @@ def clean_all_positions():
 
             print(f"Cleaning position {target_position}")
             pump_on()
-            time.sleep(3)
+            time.sleep(2)
             pump_off()
 
             drive_away()
-            start_position = target_position
+            home_stepper()
 
     except Exception as e:
         print(f"Error during cleaning: {str(e)}")
         pump_off()
         drive_away()
 
-    home_stepper()
     print("Cleaning finished")
