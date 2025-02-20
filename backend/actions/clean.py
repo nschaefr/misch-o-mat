@@ -24,6 +24,7 @@ def clean_all_positions():
     except Exception as e:
         print(f"Error during cleaning: {str(e)}")
     finally:
+        drive_away()
         pump_off()
 
     home_stepper()
