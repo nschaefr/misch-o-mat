@@ -1,5 +1,8 @@
 import RPi.GPIO as GPIO
 
+# Button
+BUTTON_PIN = 26
+
 # Stepper
 DIR_PIN = 7
 STEP_PIN = 8
@@ -16,6 +19,9 @@ PUMP_PIN = 16
 
 def setup_gpio():
     GPIO.setmode(GPIO.BCM)
+
+    # Button
+    GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
     # Stepper
     GPIO.setup(DIR_PIN, GPIO.OUT)

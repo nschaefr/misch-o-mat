@@ -1,12 +1,15 @@
 import os
 import logging
+import threading
+import time
+import RPi.GPIO as GPIO
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
 from json import JSONDecodeError
 from actions.dispense import dispense_drink
 from actions.reset import reset
 from actions.clean import clean_all_positions
-from config.setup import clean_gpio, setup_gpio
+from config.setup import clean_gpio, setup_gpio, BUTTON_PIN
 from hardware.scale import tare, calibrate
 
 log = logging.getLogger('werkzeug')
@@ -15,6 +18,17 @@ log.setLevel(logging.ERROR)
 app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
 CORS(app, origins="*")
 JSON_FOLDER = "database"
+
+
+def button_listener():
+    while True:
+        if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+            reset()
+            time.sleep(0.5)
+
+
+listener_thread = threading.Thread(target=button_listener, daemon=True)
+listener_thread.start()
 
 
 @app.route('/')
@@ -242,4 +256,7 @@ def update_value(file_name):
 if __name__ == '__main__':
     setup_gpio()
     reset()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    try:
+        app.run(host="0.0.0.0", port=5000, debug=True)
+    except KeyboardInterrupt:
+        GPIO.cleanup()
