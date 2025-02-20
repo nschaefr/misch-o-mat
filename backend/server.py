@@ -1,6 +1,7 @@
 import os
 import logging
 import threading
+import time
 import RPi.GPIO as GPIO
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
@@ -23,7 +24,11 @@ def button_listener():
     while True:
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             print("Emergency Button pressed")
+            clean_gpio()
+            time.sleep(1)
+            setup_gpio()
             reset()
+        time.sleep(0.5)
 
 
 @app.route('/')
