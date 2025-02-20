@@ -1,6 +1,6 @@
 import json
 import os
-from hx711 import HX711
+from config.setup import hx
 import RPi.GPIO as GPIO
 import time
 
@@ -10,10 +10,6 @@ config_path = os.path.join(os.path.dirname(__file__), '../config/scale.json')
 with open(config_path, 'r') as config_file:
     config = json.load(config_file)
     ratio = config["RATIO"]
-
-hx = HX711(dout_pin=23, pd_sck_pin=24, gain_channel_A=64)
-hx.zero(1)
-hx.set_scale_ratio(ratio)
 
 
 def tare():

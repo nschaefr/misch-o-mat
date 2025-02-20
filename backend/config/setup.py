@@ -1,4 +1,6 @@
 import RPi.GPIO as GPIO
+from hx711 import HX711
+from config.setup import ratio
 
 # Button
 BUTTON_PIN = 26
@@ -16,9 +18,15 @@ LIN2 = 21
 # Pump
 PUMP_PIN = 16
 
+hx = HX711(dout_pin=23, pd_sck_pin=24, gain_channel_A=64)
+
 
 def setup_gpio():
     GPIO.setmode(GPIO.BCM)
+
+    hx = HX711(dout_pin=23, pd_sck_pin=24, gain_channel_A=64)
+    hx.zero(1)
+    hx.set_scale_ratio(ratio)
 
     # Button
     GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
