@@ -26,12 +26,12 @@ def dispense_drink(ingredients):
             scale(amount, trailing=False)
             pump_off()
 
-            drive_away()
             start_position = target_position
 
     except Exception as e:
         print(f"Error during dispensing: {str(e)}")
     finally:
+        drive_away()
         pump_off()
 
     home_stepper()
