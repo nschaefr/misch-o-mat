@@ -27,7 +27,7 @@ def button_listener():
             clean_gpio()
             setup_gpio()
             reset()
-            time.sleep(0.05)
+        time.sleep(0.05)
 
 
 @app.route('/')
