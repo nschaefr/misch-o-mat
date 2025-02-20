@@ -1,7 +1,10 @@
 import json
 import os
 from hx711 import HX711
+import RPi.GPIO as GPIO
 import time
+
+GPIO.setmode(GPIO.BCM)
 
 config_path = os.path.join(os.path.dirname(__file__), '../config/scale.json')
 with open(config_path, 'r') as config_file:
