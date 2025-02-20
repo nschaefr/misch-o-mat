@@ -39,7 +39,7 @@
         "name": "Wodka-E",
         "zutaten": {
             "28": 25,
-            "5": 75
+            "1": 75
         },
         "gesamtmenge_ml": 300,
         "url": "mixdrinks/wodka-e.jpg"
@@ -48,7 +48,7 @@
         "name": "Flying Hirsch",
         "zutaten": {
             "36": 25,
-            "5": 75
+            "1": 75
         },
         "gesamtmenge_ml": 300,
         "url": "mixdrinks/flying_hirsch.jpg"
@@ -84,7 +84,7 @@
         "name": "Wodka-O",
         "zutaten": {
             "28": 25,
-            "6": 75
+            "5": 75
         },
         "gesamtmenge_ml": 300,
         "url": "mixdrinks/wodka-o.jpg"
@@ -165,7 +165,7 @@
         "name": "Tequila Slammer",
         "zutaten": {
             "34": 25,
-            "16": 75
+            "14": 75
         },
         "gesamtmenge_ml": 300,
         "url": "mixdrinks/tequila_slammer.jpg"
@@ -183,7 +183,7 @@
         "name": "Cape Cod",
         "zutaten": {
             "28": 25,
-            "9": 75
+            "7": 75
         },
         "gesamtmenge_ml": 300,
         "url": "mixdrinks/cape_cod.jpg"
@@ -263,7 +263,7 @@
     "30": {
         "name": "Rum Lemon",
         "zutaten": {
-            "31": 25,
+            "30": 25,
             "42": 75
         },
         "gesamtmenge_ml": 300,
