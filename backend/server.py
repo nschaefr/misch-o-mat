@@ -5,6 +5,7 @@ from json import JSONDecodeError
 import logging
 from actions.dispense import dispense_drink
 from actions.reset import reset
+from actions.clean import clean_all_positions
 from config.setup import clean_gpio, setup_gpio
 from hardware.scale import tare, calibrate
 
@@ -42,7 +43,7 @@ def reset_hardware():
 @app.route('/clean', methods=['POST'])
 def clean():
     try:
-        clean()
+        clean_all_positions()
         return jsonify({"message": "Successfully cleaned"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while cleaning: {str(e)}"}), 500
