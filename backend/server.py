@@ -1,8 +1,8 @@
 import os
+import logging
 from flask import Flask, json, jsonify, request, send_from_directory
 from flask_cors import CORS
 from json import JSONDecodeError
-import logging
 from actions.dispense import dispense_drink
 from actions.reset import reset
 from actions.clean import clean_all_positions
