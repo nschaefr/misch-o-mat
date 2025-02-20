@@ -33,21 +33,15 @@ function Hero() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        if (drinksCache.current["Mischgetränke"].length === 0) {
-          const response = await axios.get(
-            `http://127.0.0.1:5000/drinks/mixdrinks`
-          );
-          drinksCache.current["Mischgetränke"] = Object.values(
-            response.data[0]
-          );
-        }
+        const response = await axios.get(
+          `http://127.0.0.1:5000/drinks/mixdrinks`
+        );
+        drinksCache.current["Mischgetränke"] = Object.values(response.data[0]);
 
-        if (drinksCache.current["Longdrinks"].length === 0) {
-          const response_2 = await axios.get(
-            `http://127.0.0.1:5000/drinks/longdrinks`
-          );
-          drinksCache.current["Longdrinks"] = Object.values(response_2.data[0]);
-        }
+        const response_2 = await axios.get(
+          `http://127.0.0.1:5000/drinks/longdrinks`
+        );
+        drinksCache.current["Longdrinks"] = Object.values(response_2.data[0]);
         setDrinks(drinksCache.current[category]);
         setTimeout(() => {
           changeCategory("Longdrinks");
@@ -58,6 +52,7 @@ function Hero() {
         }, 1000);
       } catch (err) {
         console.error(err);
+        setLoading(false);
       }
     };
 
