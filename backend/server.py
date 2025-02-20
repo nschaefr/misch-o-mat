@@ -22,7 +22,7 @@ JSON_FOLDER = "database"
 
 def button_listener():
     while True:
-        if GPIO.input(BUTTON_PIN) == GPIO.HIGH:
+        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             reset()
             time.sleep(0.5)
 

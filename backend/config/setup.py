@@ -21,7 +21,7 @@ def setup_gpio():
     GPIO.setmode(GPIO.BCM)
 
     # Button
-    GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     # Stepper
     GPIO.setup(DIR_PIN, GPIO.OUT)
