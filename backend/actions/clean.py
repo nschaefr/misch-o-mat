@@ -1,8 +1,7 @@
 import time
-from hardware.stepper import move_to_hole, home_stepper
+from hardware.stepper import move_to_hole, home_stepper, map_position
 from hardware.bridge import drive_up, drive_away
 from hardware.pump import pump_on, pump_off
-from .dispense import map_position
 
 
 def clean_position(position):
