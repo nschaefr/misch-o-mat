@@ -16,7 +16,7 @@ def home_stepper():
         GPIO.output(DIR_PIN, GPIO.LOW)
         while GPIO.input(ENDSTOP_PIN) == GPIO.HIGH:
             GPIO.output(STEP_PIN, GPIO.HIGH)
-            time.sleep(0.001)
+            time.sleep(0.0002)
             GPIO.output(STEP_PIN, GPIO.LOW)
             time.sleep(0.001)
 
@@ -24,7 +24,7 @@ def home_stepper():
 
         for i in range(55):
             GPIO.output(STEP_PIN, GPIO.HIGH)
-            time.sleep(0.001)
+            time.sleep(0.0002)
             GPIO.output(STEP_PIN, GPIO.LOW)
             time.sleep(0.001)
     except Exception as e:

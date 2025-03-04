@@ -30,8 +30,8 @@ def dispense_drink(ingredients):
             start_position = target_position
 
     except Exception as e:
-	print(f"Error during dispensing: {str(e)}")
-	raise e
+	    print(f"Error during dispensing: {str(e)}")
+	    raise e
 
     home_stepper()
     print("Dispensing finished")

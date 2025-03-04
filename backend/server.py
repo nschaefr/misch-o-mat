@@ -10,7 +10,7 @@ from actions.dispense import dispense_drink
 from actions.reset import reset
 from actions.clean import clean_position
 from config.setup import clean_gpio, setup_gpio, BUTTON_PIN
-from hardware.scale import tare, calibrate
+from hardware.scale import tare, calibrate, setup_scale
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
@@ -24,10 +24,10 @@ def button_listener():
     while True:
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             print("Emergency Button pressed")
-            clean_gpio()
-            setup_gpio()
             reset()
-        time.sleep(0.5)
+            clean_gpio()
+        time.sleep(2)
+        setup_gpio()
 
 
 @app.route('/')
@@ -124,6 +124,16 @@ def get_data(filename):
             available = True
             for ingredient_id, percentage in drink['zutaten'].items():
                 amount = percentage / 100 * drink_ml
+
+                if liquids_data[str(ingredient_id)]['belegungswert'] == 0:
+                    if liquids_data[str(ingredient_id)]['fuellstand_ml'] < 150:
+                        available = False
+                        break
+                else:
+                    if liquids_data[str(ingredient_id)]['fuellstand_ml'] < 80:
+                        available = False
+                        break
+
                 if str(ingredient_id) not in liquids_data or liquids_data[str(ingredient_id)][
                         'fuellstand_ml'] < amount or liquids_data[str(ingredient_id)]['anschlussplatz'] == 0:
                     available = False
@@ -175,11 +185,11 @@ def preparation():
         for ingredient_id, percentage in drink_data['zutaten'].items():
             if filename == "mixdrinks.json":
                 if liquids_data[str(ingredient_id)]['alkohol'] == False:
-                    amount = (percentage - 5) / 100 * drink_ml if strength == "stark" else (
-                        percentage + 5) / 100 * drink_ml if strength == "schwach" else percentage / 100 * drink_ml
+                    amount = (percentage + 5) / 100 * drink_ml if strength == "mittel" else (
+                        percentage + 10) / 100 * drink_ml if strength == "schwach" else percentage / 100 * drink_ml
                 else:
-                    amount = (percentage - 5) / 100 * drink_ml if strength == "schwach" else (
-                        percentage + 5) / 100 * drink_ml if strength == "stark" else percentage / 100 * drink_ml
+                    amount = (percentage - 10) / 100 * drink_ml if strength == "schwach" else (
+                        percentage - 5) / 100 * drink_ml if strength == "mittel" else percentage / 100 * drink_ml
             else:
                 amount = percentage / 100 * drink_ml
             if str(ingredient_id) in liquids_data:

@@ -3,7 +3,7 @@
         "alkohol": false,
         "anschlussplatz": 2,
         "belegungswert": 0,
-        "fuellstand_ml": 800.0,
+        "fuellstand_ml": 1125.0,
         "name": "Energy"
     },
     "2": {
@@ -24,7 +24,7 @@
         "alkohol": false,
         "anschlussplatz": 1,
         "belegungswert": 0,
-        "fuellstand_ml": 1450,
+        "fuellstand_ml": 1700,
         "name": "Cola"
     },
     "5": {
@@ -192,7 +192,7 @@
         "alkohol": true,
         "anschlussplatz": 10,
         "belegungswert": 1,
-        "fuellstand_ml": 1550.0,
+        "fuellstand_ml": 155.0,
         "name": "Wodka"
     },
     "29": {

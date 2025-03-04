@@ -27,7 +27,7 @@ function Ready() {
         </div>
         <div className="text-[22px] font-medium">
           <span className="font-extrabold text-[24px]">{name}</span> wurde
-          erfolgreich <br /> zubereitet <span className="text-[26px]">🎉</span>
+          erfolgreich <br /> zubereitet.
         </div>
       </div>
     </div>
