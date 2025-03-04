@@ -1,19 +1,17 @@
 import time
-from hardware.stepper import move_to_hole, home_stepper, map_position
+from hardware.stepper import move_to_hole, home_stepper
 from hardware.bridge import drive_up, drive_away
 from hardware.pump import pump_on, pump_off
 
 
 def clean_position(position):
-    target_position = map_position(position)
-
     try:
-        move_to_hole(0, target_position)
+        move_to_hole(0, position)
         drive_up()
 
-        print(f"Cleaning position {target_position}")
+        print(f"Cleaning position {position}")
         pump_on()
-        time.sleep(6)
+        time.sleep(10)
         pump_off()
 
         drive_away()
@@ -24,4 +22,4 @@ def clean_position(position):
         pump_off()
         drive_away()
 
-    print(f"Cleaning of Position {target_position} finished")
+    print(f"Cleaning of Position {position} finished")

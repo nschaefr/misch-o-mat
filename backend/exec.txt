@@ -1,0 +1,1 @@
+chromium-browser --kiosk --touch-events=enabled --disable-features=BackForwardCache,OverscrollHistoryNavigation,ScrollAnchoring --noerrdialogs --disable-infobars http://localhost:5000

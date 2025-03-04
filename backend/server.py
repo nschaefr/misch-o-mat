@@ -25,7 +25,6 @@ def button_listener():
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             print("Emergency Button pressed")
             clean_gpio()
-            time.sleep(1)
             setup_gpio()
             reset()
         time.sleep(0.5)
@@ -189,8 +188,11 @@ def preparation():
 
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
-
-        dispense_drink(ingredients)
+        
+        try:
+            dispense_drink(ingredients)
+        except Exception as e:
+            return jsonify({"error": f"Dispensing failed: {str(e)}"}), 500
 
         return '', 204
     except JSONDecodeError:

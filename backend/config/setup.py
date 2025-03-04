@@ -18,6 +18,7 @@ PUMP_PIN = 16
 
 
 def setup_gpio():
+    import hardware.scale	    
     GPIO.setmode(GPIO.BCM)
 
     # Button
