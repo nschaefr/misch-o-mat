@@ -8,11 +8,13 @@ function Cleaning() {
   const [success, setSuccess] = useState(null); // Initialize as null to handle both success and failure states
   const arrowStyle = { fontSize: 40 };
 
-  const handleAction = async () => {
+  const handleAction = async (position) => {
     setClicked(true);
     setSuccess(null);
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/clean`);
+      const response = await axios.post(`http://127.0.0.1:5000/clean`, {
+        position: position,
+      });
       setClicked(false);
       setSuccess(true); // Set success to true
     } catch (err) {
@@ -36,27 +38,21 @@ function Cleaning() {
         </NavLink>
       </div>
       <div className="flex flex-col items-center">
-        <div className="font-normal mt-28 text-[22px]">
-          <div className="text-center">
-            Bitte sicherstellen, dass alle notwendigen Gefäße <br /> befüllt
-            sind sowie für den Auslauf bereit stehen.
-          </div>
+        <div className="grid grid-cols-4 gap-4 mt-1">
+          {Array.from({ length: 19 }, (_, i) => (
+            <button
+              key={i + 1}
+              className={`${
+                clicked
+                  ? "bg-[#25463c] opacity-50 pointer-events-none"
+                  : "bg-[#1fe0a6]"
+              } w-[95px] h-[60px] cursor-pointer items-center justify-center rounded-full transition-all duration-75 text-[#12211d] font-bold`}
+              onClick={() => handleAction(i + 1)}
+            >
+              <p className={`text-md font-bold leading-normal`}>{i + 1}</p>
+            </button>
+          ))}
         </div>
-        <button
-          className={`${
-            clicked
-              ? "bg-[#25463c] opacity-50 pointer-events-none"
-              : "bg-[#1fe0a6]"
-          } mt-6 w-[180px] h-[42px] cursor-pointer items-center justify-center rounded-full transition-all duration-75 text-[#12211d] font-bold`}
-          onClick={handleAction}
-        >
-          <p className={`text-md font-bold leading-normal`}>Starten</p>
-        </button>
-        {success !== null && (
-          <span className="mt-3 font-normal text-xs">
-            {success ? "✅ Erfolgreich gereinigt" : "❌ Fehlgeschlagen"}
-          </span>
-        )}
       </div>
     </div>
   );

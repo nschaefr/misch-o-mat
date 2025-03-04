@@ -8,7 +8,7 @@ from flask_cors import CORS
 from json import JSONDecodeError
 from actions.dispense import dispense_drink
 from actions.reset import reset
-from actions.clean import clean_all_positions
+from actions.clean import clean_position
 from config.setup import clean_gpio, setup_gpio, BUTTON_PIN
 from hardware.scale import tare, calibrate
 
@@ -57,7 +57,12 @@ def reset_hardware():
 @app.route('/clean', methods=['POST'])
 def clean():
     try:
-        clean_all_positions()
+        data = request.get_json()
+        if 'position' not in data:
+            return jsonify({"error": "Missing required parameter"}), 400
+
+        position = data['position']
+        clean_position(position)
         return jsonify({"message": "Successfully cleaned"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while cleaning: {str(e)}"}), 500
@@ -75,8 +80,8 @@ def calibrate():
 @app.route('/shutdown', methods=['POST'])
 def shutdown():
     try:
-        #shutdown functionality
         clean_gpio()
+        os.system("sudo shutdown now")
         return jsonify({"message": "Raspberry Pi will be shut down"}), 200
     except Exception as e:
         return jsonify({"error": f"Error while shutting down: {str(e)}"}), 500
