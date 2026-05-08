@@ -52,7 +52,7 @@ export default function Preparation() {
       }
 
       try {
-        await axios.post("http://127.0.0.1:5000/preparation", {
+        await axios.post("/preparation", {
           drink: drink.name,
           strength: strength,
           category: category,

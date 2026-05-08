@@ -12,7 +12,7 @@ function Cleaning() {
     setClicked(true);
     setSuccess(null);
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/clean`, {
+      const response = await axios.post(`/clean`, {
         position: position,
       });
       setClicked(false);

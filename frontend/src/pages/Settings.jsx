@@ -7,7 +7,7 @@ import axios from "axios";
 function Settings() {
   const handleAction = async (action) => {
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/${action}`);
+      const response = await axios.post(`/${action}`);
     } catch (err) {
       console.log(err);
     }

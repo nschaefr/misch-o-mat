@@ -12,12 +12,10 @@ function Configuration() {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://127.0.0.1:5000/liquids`);
+        const response = await axios.get(`/liquids`);
         setLiquids(Object.values(response.data));
 
-        const response_2 = await axios.get(
-          `http://127.0.0.1:5000/drinks/longdrinks`
-        );
+        const response_2 = await axios.get(`/drinks/longdrinks`);
         setSize(Object.values(response_2.data)[1]);
         setTimeout(() => {
           setLoading(false);
@@ -33,14 +31,11 @@ function Configuration() {
 
   const updateData = async (val, idx, cat, file) => {
     try {
-      const response = await axios.post(
-        `http://127.0.0.1:5000/update/${file}`,
-        {
-          value: val,
-          index: idx,
-          category: cat,
-        }
-      );
+      const response = await axios.post(`/update/${file}`, {
+        value: val,
+        index: idx,
+        category: cat,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -124,7 +119,7 @@ function Configuration() {
           <div className="px-1">
             {liquids.map((item, index) => {
               const assignedAnschlussplaetze = liquids.map(
-                (liquid) => liquid.anschlussplatz
+                (liquid) => liquid.anschlussplatz,
               );
               const options =
                 item.belegungswert === 0
@@ -132,13 +127,13 @@ function Configuration() {
                       (option) =>
                         !assignedAnschlussplaetze.includes(option) ||
                         item.anschlussplatz === option ||
-                        option === 0
+                        option === 0,
                     )
                   : [0, ...Array.from({ length: 10 }, (_, i) => i + 10)].filter(
                       (option) =>
                         !assignedAnschlussplaetze.includes(option) ||
                         item.anschlussplatz === option ||
-                        option === 0
+                        option === 0,
                     );
 
               return (
@@ -191,7 +186,7 @@ function Configuration() {
                           >
                             {option}
                           </option>
-                        )
+                        ),
                       )}
                       {item.fuellstand_ml % 50 !== 0 && (
                         <option
