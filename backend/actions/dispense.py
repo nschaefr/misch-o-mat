@@ -6,6 +6,10 @@ from hardware.scale import scale, tare
 
 
 def load_liquids_database(file_path="/home/misch-o-mat/misch-o-mat/backend/database/liquids.json"):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    backend_dir = os.path.dirname(current_dir)
+    file_path = os.path.join(backend_dir, "database", "liquids.json")
+    
     with open(file_path, "r") as file:
         return json.load(file)
 
