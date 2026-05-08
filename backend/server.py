@@ -150,7 +150,7 @@ def get_data(filename):
 def preparation():
     data = request.get_json()
 
-    if 'drink' not in data or 'strength' not in data:
+    if not data or 'drink' not in data or 'strength' not in data or 'category' not in data:
         return jsonify({"error": "Missing required parameters"}), 400
 
     drink_name = data['drink']
@@ -161,7 +161,7 @@ def preparation():
     liquids_filepath = os.path.join(JSON_FOLDER, 'liquids.json')
 
     if not os.path.isfile(drinks_filepath) or not os.path.isfile(liquids_filepath):
-        return {"error": "File not found"}, 404
+        return jsonify({"error": "File not found"}), 404
 
     try:
         with open(drinks_filepath, 'r') as drinks_file:
@@ -177,14 +177,22 @@ def preparation():
                 break
 
         if drink_data is None:
-            return {"error": "Drink not found"}, 404
+            return jsonify({"error": "Drink not found"}), 404
 
         drink_ml = drink_data['gesamtmenge_ml']
         ingredients = {}
 
         for ingredient_id, percentage in drink_data['zutaten'].items():
+            ing_id_str = str(ingredient_id)
+
+            if ing_id_str not in liquids_data:
+                print(f"Warnung: Zutat {ing_id_str} existiert nicht in liquids.json")
+                continue
+            
             if filename == "mixdrinks.json":
-                if liquids_data[str(ingredient_id)]['alkohol'] == False:
+                is_alcohol = liquids_data[ing_id_str].get('alkohol', False)
+                
+                if not is_alcohol:
                     amount = (percentage + 5) / 100 * drink_ml if strength == "mittel" else (
                         percentage + 10) / 100 * drink_ml if strength == "schwach" else percentage / 100 * drink_ml
                 else:
@@ -192,9 +200,9 @@ def preparation():
                         percentage - 5) / 100 * drink_ml if strength == "mittel" else percentage / 100 * drink_ml
             else:
                 amount = percentage / 100 * drink_ml
-            if str(ingredient_id) in liquids_data:
-                liquids_data[str(ingredient_id)]['fuellstand_ml'] -= amount
-                ingredients[ingredient_id] = amount
+            
+            liquids_data[ing_id_str]['fuellstand_ml'] -= amount
+            ingredients[ingredient_id] = amount
 
         with open(liquids_filepath, 'w') as liquids_file:
             json.dump(liquids_data, liquids_file, indent=4, sort_keys=False)
@@ -205,8 +213,10 @@ def preparation():
             return jsonify({"error": f"Dispensing failed: {str(e)}"}), 500
 
         return '', 204
-    except JSONDecodeError:
-        return {"error": "Invalid JSON format"}, 400
+    
+    except Exception as e:
+        print(f"Kritischer Fehler in /preparation: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/update/<file_name>', methods=['POST'])
